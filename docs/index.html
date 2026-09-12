@@ -154,10 +154,12 @@ td.desc { white-space: normal; color: var(--ink-2); max-width: 380px; min-width:
 .barrow .n { text-align: right; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 
 /* months chart */
-.months { display: flex; gap: 4px; align-items: flex-end; height: 110px; }
-.months .m { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 5px; min-width: 0; }
+.months { display: flex; gap: 5px; align-items: flex-end; }
+.months .m { flex: 1; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.months .mtrack { height: 100px; display: flex; align-items: flex-end; }
 .months .mb { width: 100%; background: var(--active); border-radius: 3px 3px 0 0; min-height: 2px; }
-.months .ml { font-size: 9.5px; color: var(--ink-3); writing-mode: vertical-rl; }
+.months .ml { font-size: 10px; color: var(--ink-3); text-align: center; white-space: nowrap; }
+.months .mv { font-size: 10.5px; color: var(--ink-2); text-align: center; font-variant-numeric: tabular-nums; }
 
 /* hygiene */
 .score { display: inline-flex; align-items: center; gap: 7px; }
@@ -362,11 +364,13 @@ function viewOverview() {
   // 12 month push activity
   const months = s.months;
   const maxM = Math.max(1, ...months.map((m) => m.pushes));
+  const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   out.append(panel('Repos pushed per month', 'last 12 months',
     el('div', { className: 'months' },
       months.map((m) => el('div', { className: 'm', title: `${m.key}: ${m.pushes} repos pushed, ${m.created} created` },
-        el('div', { className: 'mb', style: `height:${(m.pushes / maxM) * 88}px` }),
-        el('div', { className: 'ml' }, m.key.slice(2)))))));
+        el('div', { className: 'mv' }, m.pushes || ''),
+        el('div', { className: 'mtrack' }, el('div', { className: 'mb', style: `height:${Math.max(2, (m.pushes / maxM) * 100)}px` })),
+        el('div', { className: 'ml' }, MON[Number(m.key.slice(5)) - 1]))))));
 
   const two = el('div', { className: 'grid', style: 'grid-template-columns:repeat(auto-fit,minmax(300px,1fr))' });
   two.append(
