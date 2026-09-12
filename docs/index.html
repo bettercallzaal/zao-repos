@@ -165,9 +165,6 @@ td.desc { white-space: normal; color: var(--ink-2); max-width: 380px; min-width:
 .score { display: inline-flex; align-items: center; gap: 7px; }
 .scorebar { width: 54px; height: 6px; background: var(--line-2); border-radius: 3px; overflow: hidden; }
 .scorebar i { display: block; height: 100%; }
-.checks { letter-spacing: 1px; font-size: 12px; }
-.checks .y { color: var(--ok); }
-.checks .n { color: var(--ink-3); }
 
 /* portfolio */
 .brand-group { margin-bottom: 22px; }
@@ -530,21 +527,24 @@ function viewHygiene() {
       el('span', { className: 'scorebar' }, el('i', { style: `width:${r.hygiene.score}%;background:${c}` })),
       el('span', {}, r.hygiene.score + '%'));
   };
-  const checksCell = (r) => el('span', { className: 'checks' },
-    Object.entries(r.hygiene.checks).map(([k, v]) =>
-      el('span', { className: v ? 'y' : 'n', title: CHECK_LABELS[k] + (v ? ': ok' : ': missing') }, v ? '●' : '○')));
+  const missingCell = (r) => {
+    const gaps = Object.entries(r.hygiene.checks).filter(([, v]) => !v).map(([k]) => CHECK_LABELS[k]);
+    return gaps.length
+      ? el('span', {}, gaps.map((g, i) => el('span', { className: 'pill down', style: 'margin-right:4px' }, g)))
+      : el('span', { className: 'pill up' }, 'complete');
+  };
 
   const cols = [
     { key: 'name', label: 'Repo', get: (r) => r.name, cell: repoLink, cls: 'name' },
     { key: 'score', label: 'Score', num: true, get: (r) => r.hygiene.score, cell: scoreCell },
-    { key: 'checks', label: Object.values(CHECK_LABELS).join(' / '), get: (r) => r.hygiene.passed, cell: checksCell },
+    { key: 'missing', label: 'Missing', get: (r) => r.hygiene.total - r.hygiene.passed, cell: missingCell },
     { key: 'claude', label: 'CLAUDE.md', get: (r) => (r.hasClaudeMd ? 1 : 0), cell: (r) => r.hasClaudeMd ? el('span', { className: 'pill up' }, 'yes') : el('span', { className: 'muted' }, '-') },
     { key: 'topics', label: 'Topics', get: (r) => r.topics.length, cell: (r) => r.topics.length ? r.topics.slice(0, 3).join(', ') : el('span', { className: 'muted' }, 'none') },
     { key: 'license', label: 'License', get: (r) => r.license || '', cell: (r) => r.license || el('span', { className: 'muted' }, '-') },
     { key: 'pushed', label: 'Last push', get: (r) => new Date(r.pushedAt).getTime(), cell: (r) => ago(r.pushedAt) },
   ];
 
-  out.append(panel('Worst first', 'filled dot = present, hollow = missing',
+  out.append(panel('Worst first', 'seven checks per repo: description, topics, README, license, homepage, CI, .gitignore',
     table(repos, cols, { key: 'score', desc: false })));
   return out;
 }

@@ -1,11 +1,11 @@
 {
- "generatedAt": "2026-09-12T13:53:09.141Z",
+ "generatedAt": "2026-09-12T14:04:42.223Z",
  "owners": [
   {
    "login": "bettercallzaal",
    "name": "Zaal",
    "avatarUrl": "https://avatars.githubusercontent.com/u/194099886?u=9e91e79984b83f9b751ae60a7177a81c141d7937&v=4",
-   "totalPublic": 110
+   "totalPublic": 111
   },
   {
    "login": "ZAODEVZ",
@@ -22,11 +22,11 @@
  ],
  "contributions": {
   "bettercallzaal": {
-   "commits": 9895,
+   "commits": 9899,
    "prs": 6432,
    "issues": 200,
    "newRepos": 64,
-   "total": 21231,
+   "total": 21240,
    "days": [
     [
      "2025-09-07",
@@ -798,7 +798,7 @@
     ],
     [
      "2026-03-18",
-     39
+     38
     ],
     [
      "2026-03-19",
@@ -1510,7 +1510,7 @@
     ],
     [
      "2026-09-12",
-     106
+     116
     ]
    ]
   },
@@ -3010,12 +3010,12 @@
  },
  "summary": {
   "counts": {
-   "total": 130,
-   "live": 109,
+   "total": 131,
+   "live": 110,
    "archived": 21,
    "forks": 12,
    "empty": 0,
-   "deployed": 70,
+   "deployed": 71,
    "withCI": 33,
    "withClaudeMd": 32
   },
@@ -3024,10 +3024,10 @@
    "forks": 8,
    "openIssues": 100,
    "openPRs": 46,
-   "commits30": 2259,
-   "commits90": 7996,
-   "commits365": 18517,
-   "commitsAll": 50719,
+   "commits30": 2263,
+   "commits90": 8000,
+   "commits365": 18521,
+   "commitsAll": 50723,
    "sizeMB": 1517,
    "releases": 27
   },
@@ -3038,7 +3038,7 @@
    },
    {
     "name": "hot",
-    "count": 20
+    "count": 21
    },
    {
     "name": "warm",
@@ -3068,7 +3068,7 @@
    },
    {
     "name": "JavaScript",
-    "count": 13
+    "count": 14
    },
    {
     "name": "Shell",
@@ -3086,7 +3086,7 @@
   "brands": [
    {
     "name": "ZAO Core",
-    "count": 19
+    "count": 20
    },
    {
     "name": "Experiments",
@@ -3176,7 +3176,7 @@
   "accounts": [
    {
     "name": "bettercallzaal",
-    "count": 110
+    "count": 111
    },
    {
     "name": "ZAODEVZ",
@@ -3241,26 +3241,104 @@
    },
    {
     "key": "2026-09",
-    "pushes": 21,
-    "created": 1
+    "pushes": 22,
+    "created": 2
    }
   ],
-  "hygieneAverage": 59,
+  "hygieneAverage": 53,
   "hygieneGaps": {
-   "noDescription": 26,
-   "noTopics": 129,
+   "noDescription": 78,
+   "noTopics": 130,
    "noReadme": 11,
-   "noLicense": 34,
-   "noCI": 97
+   "noLicense": 35,
+   "noCI": 98
   }
  },
  "repos": [
+  {
+   "name": "zao-repos",
+   "nameWithOwner": "bettercallzaal/zao-repos",
+   "account": "bettercallzaal",
+   "url": "https://github.com/bettercallzaal/zao-repos",
+   "description": "Live dashboard over every public ZAO GitHub repository - activity, deploys, hygiene, portfolio",
+   "homepage": "https://bettercallzaal.github.io/zao-repos",
+   "brand": "ZAO Core",
+   "archived": false,
+   "fork": false,
+   "template": false,
+   "empty": false,
+   "createdAt": "2026-09-12T13:58:42Z",
+   "pushedAt": "2026-09-12T14:02:51Z",
+   "updatedAt": "2026-09-12T14:02:55Z",
+   "ageDays": 0,
+   "staleness": "hot",
+   "sizeKB": 0,
+   "stars": 0,
+   "forks": 0,
+   "watchers": 0,
+   "openIssues": 0,
+   "openPRs": 0,
+   "license": null,
+   "language": "JavaScript",
+   "languageColor": "#f1e05a",
+   "languages": [
+    {
+     "name": "JavaScript",
+     "color": "#f1e05a",
+     "pct": 100
+    }
+   ],
+   "topics": [],
+   "defaultBranch": "main",
+   "lastCommit": {
+    "at": "2026-09-12T14:02:51Z",
+    "message": "Stop short overview panels stretching to match tall neighbours"
+   },
+   "commits30": 4,
+   "commits90": 4,
+   "commits365": 4,
+   "commitsAll": 4,
+   "latestRelease": null,
+   "releaseCount": 0,
+   "hasReadme": true,
+   "readmeBytes": 2402,
+   "hasClaudeMd": false,
+   "hasLicenseFile": false,
+   "hasGitignore": true,
+   "hasEnvExample": false,
+   "workflows": [],
+   "pkg": {
+    "deps": 0,
+    "devDeps": 1,
+    "framework": null
+   },
+   "hygiene": {
+    "checks": {
+     "description": true,
+     "topics": false,
+     "readme": true,
+     "license": false,
+     "homepage": true,
+     "ci": false,
+     "gitignore": true
+    },
+    "passed": 4,
+    "total": 7,
+    "score": 57
+   },
+   "contributors": 1,
+   "deploy": {
+    "status": 200,
+    "finalUrl": "https://bettercallzaal.github.io/zao-repos/",
+    "checkedAt": "2026-09-12T14:05:29.707Z"
+   }
+  },
   {
    "name": "ZAOOS",
    "nameWithOwner": "bettercallzaal/ZAOOS",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/ZAOOS",
-   "description": "ZAOOS",
+   "description": null,
    "homepage": "https://zaoos.vercel.app",
    "brand": "ZAO OS",
    "archived": false,
@@ -3360,7 +3438,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -3368,9 +3446,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 6,
+    "passed": 5,
     "total": 7,
-    "score": 86
+    "score": 71
    },
    "contributors": 13,
    "lastRun": {
@@ -3382,8 +3460,8 @@
    },
    "deploy": {
     "status": 0,
-    "error": "TypeError",
-    "checkedAt": "2026-09-12T13:54:30.527Z"
+    "error": "unreachable",
+    "checkedAt": "2026-09-12T14:05:50.574Z"
    }
   },
   {
@@ -3477,7 +3555,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://aurdour.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:09.999Z"
+    "checkedAt": "2026-09-12T14:05:29.507Z"
    }
   },
   {
@@ -3485,7 +3563,7 @@
    "nameWithOwner": "ZAODEVZ/zabalgames",
    "account": "ZAODEVZ",
    "url": "https://github.com/ZAODEVZ/zabalgames",
-   "description": "zabalgames",
+   "description": null,
    "homepage": "https://zabalgames.vercel.app",
    "brand": "ZABAL",
    "archived": false,
@@ -3557,7 +3635,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -3565,9 +3643,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 6,
+    "passed": 5,
     "total": 7,
-    "score": 86
+    "score": 71
    },
    "contributors": 4,
    "lastRun": {
@@ -3580,7 +3658,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalgamez.com/",
-    "checkedAt": "2026-09-12T13:54:16.466Z"
+    "checkedAt": "2026-09-12T14:05:31.794Z"
    }
   },
   {
@@ -3674,7 +3752,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://poidhz.com/",
-    "checkedAt": "2026-09-12T13:54:10.608Z"
+    "checkedAt": "2026-09-12T14:05:29.870Z"
    }
   },
   {
@@ -3766,7 +3844,7 @@
    "nameWithOwner": "ZAODEVZ/ZAOcowork",
    "account": "ZAODEVZ",
    "url": "https://github.com/ZAODEVZ/ZAOcowork",
-   "description": "ZAOcowork",
+   "description": null,
    "homepage": "https://za-ocowork.vercel.app",
    "brand": "Cowork",
    "archived": false,
@@ -3854,7 +3932,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -3862,9 +3940,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 6,
+    "passed": 5,
     "total": 7,
-    "score": 86
+    "score": 71
    },
    "contributors": 6,
    "lastRun": {
@@ -3877,7 +3955,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://za-ocowork.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:16.360Z"
+    "checkedAt": "2026-09-12T14:05:32.365Z"
    }
   },
   {
@@ -3985,7 +4063,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaostock.com/",
-    "checkedAt": "2026-09-12T13:54:16.933Z"
+    "checkedAt": "2026-09-12T14:05:31.876Z"
    }
   },
   {
@@ -4083,7 +4161,7 @@
    "deploy": {
     "status": 404,
     "finalUrl": "https://zartizen-phi.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:16.003Z"
+    "checkedAt": "2026-09-12T14:05:31.773Z"
    }
   },
   {
@@ -4091,7 +4169,7 @@
    "nameWithOwner": "ZAODEVZ/ZAOscout",
    "account": "ZAODEVZ",
    "url": "https://github.com/ZAODEVZ/ZAOscout",
-   "description": "ZAOscout",
+   "description": null,
    "homepage": "https://za-oscout.vercel.app",
    "brand": "Agents & Bots",
    "archived": false,
@@ -4163,7 +4241,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -4171,9 +4249,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 6,
+    "passed": 5,
     "total": 7,
-    "score": 86
+    "score": 71
    },
    "contributors": 3,
    "lastRun": {
@@ -4186,7 +4264,7 @@
    "deploy": {
     "status": 404,
     "finalUrl": "https://za-oscout.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:16.090Z"
+    "checkedAt": "2026-09-12T14:05:31.920Z"
    }
   },
   {
@@ -4194,7 +4272,7 @@
    "nameWithOwner": "bettercallzaal/wwtracker",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/wwtracker",
-   "description": "wwtracker",
+   "description": null,
    "homepage": "https://wwtracker.vercel.app",
    "brand": "WaveWarZ",
    "archived": false,
@@ -4276,7 +4354,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -4284,9 +4362,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 6,
+    "passed": 5,
     "total": 7,
-    "score": 86
+    "score": 71
    },
    "contributors": 2,
    "lastRun": {
@@ -4299,7 +4377,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://wwtracker.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:09.846Z"
+    "checkedAt": "2026-09-12T14:05:29.815Z"
    }
   },
   {
@@ -4426,7 +4504,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://ecc.tools/",
-    "checkedAt": "2026-09-12T13:54:10.058Z"
+    "checkedAt": "2026-09-12T14:05:29.581Z"
    }
   },
   {
@@ -4514,7 +4592,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zoostr.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:10.025Z"
+    "checkedAt": "2026-09-12T14:05:29.628Z"
    }
   },
   {
@@ -4770,7 +4848,7 @@
    "nameWithOwner": "bettercallzaal/CoCConcertZ",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/CoCConcertZ",
-   "description": "CoCConcertZ",
+   "description": null,
    "homepage": "https://co-c-concert-z.vercel.app",
    "brand": "COC Concertz",
    "archived": false,
@@ -4856,7 +4934,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -4864,9 +4942,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 6,
+    "passed": 5,
     "total": 7,
-    "score": 86
+    "score": 71
    },
    "contributors": 2,
    "lastRun": {
@@ -4879,7 +4957,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://co-c-concert-z.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:10.021Z"
+    "checkedAt": "2026-09-12T14:05:29.680Z"
    }
   },
   {
@@ -4958,7 +5036,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaoonparagraph.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:09.986Z"
+    "checkedAt": "2026-09-12T14:05:29.684Z"
    }
   },
   {
@@ -4966,7 +5044,7 @@
    "nameWithOwner": "ZAODEVZ/ZAOfractal",
    "account": "ZAODEVZ",
    "url": "https://github.com/ZAODEVZ/ZAOfractal",
-   "description": "ZAOfractal",
+   "description": null,
    "homepage": null,
    "brand": "Fractal",
    "archived": false,
@@ -5038,7 +5116,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -5046,9 +5124,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 4,
    "lastRun": {
@@ -5064,7 +5142,7 @@
    "nameWithOwner": "ZAODEVZ/zaoonparagraph",
    "account": "ZAODEVZ",
    "url": "https://github.com/ZAODEVZ/zaoonparagraph",
-   "description": "zaoonparagraph",
+   "description": null,
    "homepage": null,
    "brand": "ZAO Core",
    "archived": false,
@@ -5119,7 +5197,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -5127,9 +5205,9 @@
      "ci": false,
      "gitignore": false
     },
-    "passed": 3,
+    "passed": 2,
     "total": 7,
-    "score": 43
+    "score": 29
    },
    "contributors": 3
   },
@@ -5138,7 +5216,7 @@
    "nameWithOwner": "bettercallzaal/bettercallzaalwebsite",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/bettercallzaalwebsite",
-   "description": "bettercallzaalwebsite",
+   "description": null,
    "homepage": "https://bettercallzaalwebsite.vercel.app",
    "brand": "BetterCallZaal",
    "archived": false,
@@ -5193,7 +5271,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -5201,15 +5279,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 2,
    "deploy": {
     "status": 200,
     "finalUrl": "https://bettercallzaal.com/",
-    "checkedAt": "2026-09-12T13:54:10.778Z"
+    "checkedAt": "2026-09-12T14:05:30.005Z"
    }
   },
   {
@@ -5485,7 +5563,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://trysparkz.com/",
-    "checkedAt": "2026-09-12T13:54:10.335Z"
+    "checkedAt": "2026-09-12T14:05:30.185Z"
    }
   },
   {
@@ -5625,7 +5703,7 @@
    "nameWithOwner": "bettercallzaal/zingfisher",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zingfisher",
-   "description": "zingfisher",
+   "description": null,
    "homepage": "https://zingfisher-webapp.vercel.app",
    "brand": "Experiments",
    "archived": false,
@@ -5721,7 +5799,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -5729,9 +5807,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 6,
+    "passed": 5,
     "total": 7,
-    "score": 86
+    "score": 71
    },
    "contributors": 1,
    "lastRun": {
@@ -5744,7 +5822,7 @@
    "deploy": {
     "status": 404,
     "finalUrl": "https://zingfisher-webapp.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:10.381Z"
+    "checkedAt": "2026-09-12T14:05:29.978Z"
    }
   },
   {
@@ -5852,7 +5930,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://munderdiffl.in/",
-    "checkedAt": "2026-09-12T13:54:10.616Z"
+    "checkedAt": "2026-09-12T14:05:29.853Z"
    }
   },
   {
@@ -6175,7 +6253,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zlank.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:10.677Z"
+    "checkedAt": "2026-09-12T14:05:29.929Z"
    }
   },
   {
@@ -6183,7 +6261,7 @@
    "nameWithOwner": "bettercallzaal/zdeepmeeting",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zdeepmeeting",
-   "description": "zdeepmeeting",
+   "description": null,
    "homepage": null,
    "brand": "Experiments",
    "archived": false,
@@ -6227,7 +6305,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -6235,9 +6313,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1
   },
@@ -6469,7 +6547,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaoprojects.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:10.750Z"
+    "checkedAt": "2026-09-12T14:05:30.004Z"
    }
   },
   {
@@ -6477,7 +6555,7 @@
    "nameWithOwner": "bettercallzaal/zaomusicbot",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zaomusicbot",
-   "description": "zaomusicbot",
+   "description": null,
    "homepage": null,
    "brand": "SongJam / Music",
    "archived": false,
@@ -6539,7 +6617,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -6547,9 +6625,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1
   },
@@ -6753,7 +6831,7 @@
    "nameWithOwner": "bettercallzaal/zabalsocials",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zabalsocials",
-   "description": "zabalsocials",
+   "description": null,
    "homepage": "https://zabalsocials.vercel.app",
    "brand": "ZABAL",
    "archived": false,
@@ -6817,7 +6895,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -6825,15 +6903,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalsocials.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:10.701Z"
+    "checkedAt": "2026-09-12T14:05:29.959Z"
    }
   },
   {
@@ -6841,7 +6919,7 @@
    "nameWithOwner": "bettercallzaal/zabalsnap1",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zabalsnap1",
-   "description": "zabalsnap1",
+   "description": null,
    "homepage": "https://zabalsnap1.vercel.app",
    "brand": "ZABAL",
    "archived": false,
@@ -6895,7 +6973,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": false,
      "license": true,
@@ -6903,15 +6981,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalsnap1.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:11.485Z"
+    "checkedAt": "2026-09-12T14:05:30.256Z"
    }
   },
   {
@@ -6919,7 +6997,7 @@
    "nameWithOwner": "bettercallzaal/zabalnewsletter",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zabalnewsletter",
-   "description": "zabalnewsletter",
+   "description": null,
    "homepage": "https://zabalnewsletter.vercel.app",
    "brand": "ZABAL",
    "archived": false,
@@ -6987,7 +7065,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -6995,15 +7073,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalnewsletter.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:11.206Z"
+    "checkedAt": "2026-09-12T14:05:30.048Z"
    }
   },
   {
@@ -7167,7 +7245,7 @@
    "nameWithOwner": "bettercallzaal/zaaltimelinev1.1",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zaaltimelinev1.1",
-   "description": "zaaltimelinev1.1",
+   "description": null,
    "homepage": "https://zaaltimelinev1-1.vercel.app",
    "brand": "Personal",
    "archived": false,
@@ -7227,7 +7305,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -7235,15 +7313,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 2,
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaaltimelinev1-1.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:11.258Z"
+    "checkedAt": "2026-09-12T14:05:30.094Z"
    }
   },
   {
@@ -7389,7 +7467,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://wavewarzapp.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:11.266Z"
+    "checkedAt": "2026-09-12T14:05:30.162Z"
    }
   },
   {
@@ -7463,7 +7541,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://wavewarz-overlay.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:11.217Z"
+    "checkedAt": "2026-09-12T14:05:30.233Z"
    }
   },
   {
@@ -7635,7 +7713,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://textsplitter-olive.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:11.696Z"
+    "checkedAt": "2026-09-12T14:05:30.183Z"
    }
   },
   {
@@ -7643,7 +7721,7 @@
    "nameWithOwner": "bettercallzaal/spacetovideo",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/spacetovideo",
-   "description": "spacetovideo",
+   "description": null,
    "homepage": null,
    "brand": "Experiments",
    "archived": false,
@@ -7697,7 +7775,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -7705,9 +7783,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 2
   },
@@ -7716,7 +7794,7 @@
    "nameWithOwner": "bettercallzaal/raycast",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/raycast",
-   "description": "raycast",
+   "description": null,
    "homepage": null,
    "brand": "Experiments",
    "archived": false,
@@ -7760,7 +7838,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": false,
      "license": true,
@@ -7768,9 +7846,9 @@
      "ci": false,
      "gitignore": false
     },
-    "passed": 2,
+    "passed": 1,
     "total": 7,
-    "score": 29
+    "score": 14
    },
    "contributors": 1
   },
@@ -7779,7 +7857,7 @@
    "nameWithOwner": "bettercallzaal/nouns-snap",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/nouns-snap",
-   "description": "nouns-snap",
+   "description": null,
    "homepage": "https://nouns-snap.vercel.app",
    "brand": "Experiments",
    "archived": false,
@@ -7833,7 +7911,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": false,
      "license": true,
@@ -7841,15 +7919,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://nouns-snap.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:11.750Z"
+    "checkedAt": "2026-09-12T14:05:30.327Z"
    }
   },
   {
@@ -7857,7 +7935,7 @@
    "nameWithOwner": "bettercallzaal/mixer",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/mixer",
-   "description": "mixer",
+   "description": null,
    "homepage": null,
    "brand": "Experiments",
    "archived": false,
@@ -7901,7 +7979,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": false,
      "license": true,
@@ -7909,9 +7987,9 @@
      "ci": false,
      "gitignore": false
     },
-    "passed": 2,
+    "passed": 1,
     "total": 7,
-    "score": 29
+    "score": 14
    },
    "contributors": 1
   },
@@ -7920,7 +7998,7 @@
    "nameWithOwner": "bettercallzaal/ltaesnap",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/ltaesnap",
-   "description": "ltaesnap",
+   "description": null,
    "homepage": "https://ltaesnap.vercel.app",
    "brand": "Client Work",
    "archived": false,
@@ -7974,7 +8052,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -7982,15 +8060,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://ltaesnap.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:11.644Z"
+    "checkedAt": "2026-09-12T14:05:31.728Z"
    }
   },
   {
@@ -7998,7 +8076,7 @@
    "nameWithOwner": "bettercallzaal/fishbowlz",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/fishbowlz",
-   "description": "fishbowlz",
+   "description": null,
    "homepage": "https://fishbowlz.vercel.app",
    "brand": "FISHBOWLZ",
    "archived": false,
@@ -8067,7 +8145,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -8075,15 +8153,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://fishbowlz.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:11.908Z"
+    "checkedAt": "2026-09-12T14:05:30.309Z"
    }
   },
   {
@@ -8171,7 +8249,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://ethboulderjournal.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:12.237Z"
+    "checkedAt": "2026-09-12T14:05:30.446Z"
    }
   },
   {
@@ -8179,7 +8257,7 @@
    "nameWithOwner": "bettercallzaal/duodo-snap",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/duodo-snap",
-   "description": "duodo-snap",
+   "description": null,
    "homepage": "https://duodo-snap.vercel.app",
    "brand": "Client Work",
    "archived": false,
@@ -8233,7 +8311,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": false,
      "license": true,
@@ -8241,15 +8319,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://duodo-snap.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:12.267Z"
+    "checkedAt": "2026-09-12T14:05:30.437Z"
    }
   },
   {
@@ -8337,7 +8415,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://bettercallzaal-strategies.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:12.282Z"
+    "checkedAt": "2026-09-12T14:05:30.474Z"
    }
   },
   {
@@ -8420,7 +8498,7 @@
    "deploy": {
     "status": 404,
     "finalUrl": "https://bettercallzaal-coding-hub.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:12.248Z"
+    "checkedAt": "2026-09-12T14:05:30.489Z"
    }
   },
   {
@@ -8590,7 +8668,7 @@
    "nameWithOwner": "bettercallzaal/ZAOFlights",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/ZAOFlights",
-   "description": "ZAOFlights",
+   "description": null,
    "homepage": null,
    "brand": "ZAO Core",
    "archived": false,
@@ -8654,7 +8732,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -8662,9 +8740,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1
   },
@@ -8673,7 +8751,7 @@
    "nameWithOwner": "bettercallzaal/ZAO-Leaderboard",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/ZAO-Leaderboard",
-   "description": "ZAO-Leaderboard",
+   "description": null,
    "homepage": "https://zao-leaderboard.vercel.app",
    "brand": "ZAO Core",
    "archived": false,
@@ -8737,7 +8815,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -8745,15 +8823,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://zao-leaderboard.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:12.187Z"
+    "checkedAt": "2026-09-12T14:05:30.619Z"
    }
   },
   {
@@ -8761,7 +8839,7 @@
    "nameWithOwner": "bettercallzaal/SidebySidev2",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/SidebySidev2",
-   "description": "SidebySidev2",
+   "description": null,
    "homepage": "https://sideby-sidev2.vercel.app",
    "brand": "Experiments",
    "archived": false,
@@ -8825,7 +8903,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -8833,15 +8911,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 3,
    "deploy": {
     "status": 200,
     "finalUrl": "https://sideby-sidev2.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:12.605Z"
+    "checkedAt": "2026-09-12T14:05:31.461Z"
    }
   },
   {
@@ -8849,7 +8927,7 @@
    "nameWithOwner": "bettercallzaal/RESUMEV1",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/RESUMEV1",
-   "description": "RESUMEV1",
+   "description": null,
    "homepage": "https://resumev-1.vercel.app",
    "brand": "Personal",
    "archived": false,
@@ -8916,7 +8994,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -8924,9 +9002,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 6,
+    "passed": 5,
     "total": 7,
-    "score": 86
+    "score": 71
    },
    "contributors": 2,
    "lastRun": {
@@ -8939,7 +9017,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://resumev-1.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:12.665Z"
+    "checkedAt": "2026-09-12T14:05:30.587Z"
    }
   },
   {
@@ -8947,7 +9025,7 @@
    "nameWithOwner": "bettercallzaal/CustomPDFCreator",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/CustomPDFCreator",
-   "description": "CustomPDFCreator",
+   "description": null,
    "homepage": null,
    "brand": "Experiments",
    "archived": false,
@@ -9006,7 +9084,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": false,
      "license": true,
@@ -9014,9 +9092,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 3,
+    "passed": 2,
     "total": 7,
-    "score": 43
+    "score": 29
    },
    "contributors": 1
   },
@@ -9110,7 +9188,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://b-zbuild-2.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:12.562Z"
+    "checkedAt": "2026-09-12T14:05:30.579Z"
    }
   },
   {
@@ -9118,7 +9196,7 @@
    "nameWithOwner": "ZAODEVZ/Zuke",
    "account": "ZAODEVZ",
    "url": "https://github.com/ZAODEVZ/Zuke",
-   "description": "Zuke",
+   "description": null,
    "homepage": "https://zuke-sandy.vercel.app",
    "brand": "Experiments",
    "archived": false,
@@ -9193,7 +9271,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -9201,9 +9279,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 6,
+    "passed": 5,
     "total": 7,
-    "score": 86
+    "score": 71
    },
    "contributors": 2,
    "lastRun": {
@@ -9216,7 +9294,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zuke.thezao.com/",
-    "checkedAt": "2026-09-12T13:54:17.404Z"
+    "checkedAt": "2026-09-12T14:05:32.194Z"
    }
   },
   {
@@ -9411,7 +9489,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://bczyapz.com/",
-    "checkedAt": "2026-09-12T13:54:13.818Z"
+    "checkedAt": "2026-09-12T14:05:30.838Z"
    }
   },
   {
@@ -9505,7 +9583,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://poidhz.com/",
-    "checkedAt": "2026-09-12T13:54:17.365Z"
+    "checkedAt": "2026-09-12T14:05:32.114Z"
    }
   },
   {
@@ -9667,7 +9745,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalnewsletterbuilder.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:13.284Z"
+    "checkedAt": "2026-09-12T14:05:30.682Z"
    }
   },
   {
@@ -9837,7 +9915,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaalcaster.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:13.304Z"
+    "checkedAt": "2026-09-12T14:05:30.658Z"
    }
   },
   {
@@ -9911,7 +9989,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://gnome-pear-club.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:13.364Z"
+    "checkedAt": "2026-09-12T14:05:30.722Z"
    }
   },
   {
@@ -10004,7 +10082,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://the-zaodev-zapp-new.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:16.534Z"
+    "checkedAt": "2026-09-12T14:05:32.066Z"
    }
   },
   {
@@ -10078,7 +10156,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://thezao-com-iman-ui.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:16.929Z"
+    "checkedAt": "2026-09-12T14:05:32.101Z"
    }
   },
   {
@@ -10086,7 +10164,7 @@
    "nameWithOwner": "bettercallzaal/ZAOVideoEditor",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/ZAOVideoEditor",
-   "description": "ZAOVideoEditor",
+   "description": null,
    "homepage": "https://zao-video-editor.vercel.app",
    "brand": "ZAO Core",
    "archived": false,
@@ -10168,7 +10246,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -10176,9 +10254,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 6,
+    "passed": 5,
     "total": 7,
-    "score": 86
+    "score": 71
    },
    "contributors": 2,
    "lastRun": {
@@ -10191,7 +10269,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zao-video-editor.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:13.425Z"
+    "checkedAt": "2026-09-12T14:05:30.746Z"
    }
   },
   {
@@ -10199,7 +10277,7 @@
    "nameWithOwner": "bettercallzaal/ZAONEXUS",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/ZAONEXUS",
-   "description": "ZAONEXUS",
+   "description": null,
    "homepage": "https://zaonexus.vercel.app",
    "brand": "ZAO OS",
    "archived": false,
@@ -10266,7 +10344,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -10274,15 +10352,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 3,
    "deploy": {
     "status": 200,
     "finalUrl": "https://nexus.thezao.com/",
-    "checkedAt": "2026-09-12T13:54:14.268Z"
+    "checkedAt": "2026-09-12T14:05:30.977Z"
    }
   },
   {
@@ -10449,7 +10527,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://the-zao-zone.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:17.113Z"
+    "checkedAt": "2026-09-12T14:05:32.071Z"
    }
   },
   {
@@ -10540,7 +10618,7 @@
    "nameWithOwner": "ZAODEVZ/ZAO101",
    "account": "ZAODEVZ",
    "url": "https://github.com/ZAODEVZ/ZAO101",
-   "description": "ZAO101",
+   "description": null,
    "homepage": "https://zao-101-ten.vercel.app",
    "brand": "ZAO OS",
    "archived": false,
@@ -10604,7 +10682,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -10612,15 +10690,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 2,
    "deploy": {
     "status": 200,
     "finalUrl": "https://101.thezao.com/",
-    "checkedAt": "2026-09-12T13:54:17.560Z"
+    "checkedAt": "2026-09-12T14:05:32.261Z"
    }
   },
   {
@@ -10802,7 +10880,7 @@
    "nameWithOwner": "bettercallzaal/fractalbotapril2026",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/fractalbotapril2026",
-   "description": "fractalbotapril2026",
+   "description": null,
    "homepage": null,
    "brand": "Fractal",
    "archived": true,
@@ -10872,7 +10950,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": false,
@@ -10880,9 +10958,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 3,
+    "passed": 2,
     "total": 7,
-    "score": 43
+    "score": 29
    },
    "contributors": 1
   },
@@ -10901,7 +10979,7 @@
    "createdAt": "2026-07-04T13:56:21Z",
    "pushedAt": "2026-07-04T13:56:23Z",
    "updatedAt": "2026-07-04T13:56:27Z",
-   "ageDays": 69,
+   "ageDays": 70,
    "staleness": "warm",
    "sizeKB": 4,
    "stars": 0,
@@ -11122,7 +11200,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaonexus-iman-ui.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:17.138Z"
+    "checkedAt": "2026-09-12T14:05:32.177Z"
    }
   },
   {
@@ -11196,7 +11274,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://compliance-zm.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:17.390Z"
+    "checkedAt": "2026-09-12T14:05:32.177Z"
    }
   },
   {
@@ -11270,7 +11348,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://wavewarzafrica-invites.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:17.492Z"
+    "checkedAt": "2026-09-12T14:05:32.243Z"
    }
   },
   {
@@ -11361,7 +11439,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://101.thezao.com/",
-    "checkedAt": "2026-09-12T13:54:13.496Z"
+    "checkedAt": "2026-09-12T14:05:30.873Z"
    }
   },
   {
@@ -11454,7 +11532,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zao-stock.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:13.912Z"
+    "checkedAt": "2026-09-12T14:05:30.899Z"
    }
   },
   {
@@ -11542,7 +11620,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaostock.com/",
-    "checkedAt": "2026-09-12T13:54:14.625Z"
+    "checkedAt": "2026-09-12T14:05:30.990Z"
    }
   },
   {
@@ -11550,7 +11628,7 @@
    "nameWithOwner": "ZAODEVZ/ZAOsribeBOT",
    "account": "ZAODEVZ",
    "url": "https://github.com/ZAODEVZ/ZAOsribeBOT",
-   "description": "ZAOsribeBOT",
+   "description": null,
    "homepage": null,
    "brand": "Agents & Bots",
    "archived": false,
@@ -11604,7 +11682,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -11612,9 +11690,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1
   },
@@ -11623,7 +11701,7 @@
    "nameWithOwner": "bettercallzaal/zabalartsubmission",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zabalartsubmission",
-   "description": "zabalartsubmission",
+   "description": null,
    "homepage": "https://zabalartsubmission.vercel.app",
    "brand": "ZABAL",
    "archived": false,
@@ -11705,7 +11783,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -11713,15 +11791,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalartsubmission.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:15.249Z"
+    "checkedAt": "2026-09-12T14:05:31.791Z"
    }
   },
   {
@@ -11868,7 +11946,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://riverside-group-demo.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:14.327Z"
+    "checkedAt": "2026-09-12T14:05:30.942Z"
    }
   },
   {
@@ -11961,7 +12039,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://imanprojects.vercel.app/login?from=%2F",
-    "checkedAt": "2026-09-12T13:54:14.966Z"
+    "checkedAt": "2026-09-12T14:05:32.718Z"
    }
   },
   {
@@ -11969,7 +12047,7 @@
    "nameWithOwner": "bettercallzaal/farmdrop",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/farmdrop",
-   "description": "farmdrop",
+   "description": null,
    "homepage": "https://farmdrop.vercel.app",
    "brand": "Client Work",
    "archived": false,
@@ -12033,7 +12111,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": false,
@@ -12041,15 +12119,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://farmdrop.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:14.424Z"
+    "checkedAt": "2026-09-12T14:05:31.110Z"
    }
   },
   {
@@ -12137,7 +12215,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://birthday.zaostock.com/",
-    "checkedAt": "2026-09-12T13:54:15.432Z"
+    "checkedAt": "2026-09-12T14:05:31.302Z"
    }
   },
   {
@@ -12230,7 +12308,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://recoup-api.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:14.659Z"
+    "checkedAt": "2026-09-12T14:05:31.118Z"
    }
   },
   {
@@ -12238,7 +12316,7 @@
    "nameWithOwner": "bettercallzaal/chat",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/chat",
-   "description": "Web interface for building and managing your own agentic record label. ",
+   "description": "Web interface for building and managing your own agentic record label.",
    "homepage": "https://chat.recoupable.com",
    "brand": "Other",
    "archived": false,
@@ -12321,7 +12399,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://app.recoupable.dev/",
-    "checkedAt": "2026-09-12T13:54:15.717Z"
+    "checkedAt": "2026-09-12T14:05:31.413Z"
    }
   },
   {
@@ -12406,7 +12484,7 @@
    "nameWithOwner": "bettercallzaal/crownvics",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/crownvics",
-   "description": "crownvics",
+   "description": null,
    "homepage": "https://crownvics.vercel.app",
    "brand": "Client Work",
    "archived": false,
@@ -12456,7 +12534,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": false,
@@ -12464,15 +12542,15 @@
      "ci": false,
      "gitignore": false
     },
-    "passed": 3,
+    "passed": 2,
     "total": 7,
-    "score": 43
+    "score": 29
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://crownvics.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:15.026Z"
+    "checkedAt": "2026-09-12T14:05:31.196Z"
    }
   },
   {
@@ -12480,7 +12558,7 @@
    "nameWithOwner": "bettercallzaal/fractalbotmarch2026",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/fractalbotmarch2026",
-   "description": "fractalbotmarch2026",
+   "description": null,
    "homepage": null,
    "brand": "Fractal",
    "archived": true,
@@ -12553,7 +12631,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": false,
@@ -12561,9 +12639,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 3,
+    "passed": 2,
     "total": 7,
-    "score": 43
+    "score": 29
    },
    "contributors": 1
   },
@@ -12657,7 +12735,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://songjam-site-delta.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:14.908Z"
+    "checkedAt": "2026-09-12T14:05:31.994Z"
    }
   },
   {
@@ -12764,7 +12842,7 @@
    "createdAt": "2026-02-13T19:59:37Z",
    "pushedAt": "2026-03-03T14:01:07Z",
    "updatedAt": "2026-07-22T02:19:25Z",
-   "ageDays": 192,
+   "ageDays": 193,
    "staleness": "cooling",
    "sizeKB": 349,
    "stars": 0,
@@ -12841,7 +12919,7 @@
    "nameWithOwner": "bettercallzaal/zski",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zski",
-   "description": "zski",
+   "description": null,
    "homepage": "https://zski.vercel.app",
    "brand": "Personal",
    "archived": false,
@@ -12905,7 +12983,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": false,
@@ -12913,15 +12991,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://zski.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:15.417Z"
+    "checkedAt": "2026-09-12T14:05:31.419Z"
    }
   },
   {
@@ -12929,7 +13007,7 @@
    "nameWithOwner": "bettercallzaal/16statestreet",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/16statestreet",
-   "description": "16statestreet",
+   "description": null,
    "homepage": null,
    "brand": "Client Work",
    "archived": false,
@@ -12998,7 +13076,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": false,
@@ -13006,9 +13084,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 3,
+    "passed": 2,
     "total": 7,
-    "score": 43
+    "score": 29
    },
    "contributors": 1
   },
@@ -13017,7 +13095,7 @@
    "nameWithOwner": "bettercallzaal/zaaltimelinev1",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zaaltimelinev1",
-   "description": "zaaltimelinev1",
+   "description": null,
    "homepage": "https://zaaltimelinev1.vercel.app",
    "brand": "Personal",
    "archived": false,
@@ -13081,7 +13159,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -13089,15 +13167,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 1,
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaaltimelinev1.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:15.381Z"
+    "checkedAt": "2026-09-12T14:05:31.423Z"
    }
   },
   {
@@ -13174,7 +13252,7 @@
    "nameWithOwner": "bettercallzaal/fractalbotdec2025",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/fractalbotdec2025",
-   "description": "fractalbotdec2025",
+   "description": null,
    "homepage": null,
    "brand": "Fractal",
    "archived": true,
@@ -13239,7 +13317,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -13247,9 +13325,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 2
   },
@@ -13338,7 +13416,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://cedartide.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:15.460Z"
+    "checkedAt": "2026-09-12T14:05:31.510Z"
    }
   },
   {
@@ -13346,7 +13424,7 @@
    "nameWithOwner": "bettercallzaal/fractalbotnov2025",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/fractalbotnov2025",
-   "description": "fractalbotnov2025",
+   "description": null,
    "homepage": "https://fractalbotnov2025.vercel.app",
    "brand": "Fractal",
    "archived": true,
@@ -13411,7 +13489,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -13419,15 +13497,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 2,
    "deploy": {
     "status": 200,
     "finalUrl": "https://fractalbotnov2025.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:15.723Z"
+    "checkedAt": "2026-09-12T14:05:31.614Z"
    }
   },
   {
@@ -13435,7 +13513,7 @@
    "nameWithOwner": "bettercallzaal/Viz1",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/Viz1",
-   "description": "Viz1",
+   "description": null,
    "homepage": null,
    "brand": "Experiments",
    "archived": false,
@@ -13485,7 +13563,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -13493,9 +13571,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1
   },
@@ -13504,7 +13582,7 @@
    "nameWithOwner": "bettercallzaal/Newsletterbot1",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/Newsletterbot1",
-   "description": "Newsletterbot1",
+   "description": null,
    "homepage": null,
    "brand": "Agents & Bots",
    "archived": true,
@@ -13554,7 +13632,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": false,
@@ -13562,9 +13640,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 3,
+    "passed": 2,
     "total": 7,
-    "score": 43
+    "score": 29
    },
    "contributors": 1
   },
@@ -13573,7 +13651,7 @@
    "nameWithOwner": "bettercallzaal/WARZAI",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/WARZAI",
-   "description": "WARZAI",
+   "description": null,
    "homepage": null,
    "brand": "WaveWarZ",
    "archived": true,
@@ -13637,7 +13715,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -13645,9 +13723,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 35
   },
@@ -13719,7 +13797,7 @@
    "nameWithOwner": "bettercallzaal/ZAIV2",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/ZAIV2",
-   "description": "ZAIV2",
+   "description": null,
    "homepage": "https://zaiv-2.vercel.app",
    "brand": "ZAI",
    "archived": true,
@@ -13798,7 +13876,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": false,
@@ -13806,15 +13884,15 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 2,
    "deploy": {
     "status": 404,
     "finalUrl": "https://zaiv-2.vercel.app/",
-    "checkedAt": "2026-09-12T13:54:15.694Z"
+    "checkedAt": "2026-09-12T14:05:31.544Z"
    }
   },
   {
@@ -13822,7 +13900,7 @@
    "nameWithOwner": "bettercallzaal/ZAIV1",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/ZAIV1",
-   "description": "ZAIV1",
+   "description": null,
    "homepage": null,
    "brand": "ZAI",
    "archived": true,
@@ -13896,7 +13974,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": false,
@@ -13904,9 +13982,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 3,
+    "passed": 2,
     "total": 7,
-    "score": 43
+    "score": 29
    },
    "contributors": 1
   },
@@ -13915,7 +13993,7 @@
    "nameWithOwner": "bettercallzaal/fractalbotV3June2025",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/fractalbotV3June2025",
-   "description": "fractalbotV3June2025",
+   "description": null,
    "homepage": "",
    "brand": "Fractal",
    "archived": true,
@@ -13965,7 +14043,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -13973,9 +14051,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 4,
+    "passed": 3,
     "total": 7,
-    "score": 57
+    "score": 43
    },
    "contributors": 1
   },
@@ -13984,7 +14062,7 @@
    "nameWithOwner": "bettercallzaal/ZAO-FRACTAL-BOTV2",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/ZAO-FRACTAL-BOTV2",
-   "description": "ZAO-FRACTAL-BOTV2",
+   "description": null,
    "homepage": "",
    "brand": "Fractal",
    "archived": true,
@@ -14044,7 +14122,7 @@
    "pkg": null,
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": false,
@@ -14052,9 +14130,9 @@
      "ci": false,
      "gitignore": true
     },
-    "passed": 3,
+    "passed": 2,
     "total": 7,
-    "score": 43
+    "score": 29
    },
    "contributors": 1
   },
@@ -14063,7 +14141,7 @@
    "nameWithOwner": "bettercallzaal/zaloraV1",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/zaloraV1",
-   "description": "zaloraV1",
+   "description": null,
    "homepage": null,
    "brand": "Experiments",
    "archived": false,
@@ -14169,7 +14247,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -14177,9 +14255,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 585,
    "lastRun": null
@@ -14189,7 +14267,7 @@
    "nameWithOwner": "bettercallzaal/newsletter-bot-1",
    "account": "bettercallzaal",
    "url": "https://github.com/bettercallzaal/newsletter-bot-1",
-   "description": "newsletter-bot-1",
+   "description": null,
    "homepage": null,
    "brand": "Agents & Bots",
    "archived": true,
@@ -14295,7 +14373,7 @@
    },
    "hygiene": {
     "checks": {
-     "description": true,
+     "description": false,
      "topics": false,
      "readme": true,
      "license": true,
@@ -14303,9 +14381,9 @@
      "ci": true,
      "gitignore": true
     },
-    "passed": 5,
+    "passed": 4,
     "total": 7,
-    "score": 71
+    "score": 57
    },
    "contributors": 585,
    "lastRun": null
@@ -14438,7 +14516,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://eliza.app/eliza/",
-    "checkedAt": "2026-09-12T13:54:17.474Z"
+    "checkedAt": "2026-09-12T14:05:31.762Z"
    }
   },
   {

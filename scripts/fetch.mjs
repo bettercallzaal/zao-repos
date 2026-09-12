@@ -211,7 +211,8 @@ async function checkDeploy(url) {
       const res = await fetch(url, { method, redirect: 'follow', signal: ctrl.signal });
       return { status: res.status, finalUrl: res.url };
     } catch (err) {
-      return { status: 0, error: String(err.name || err) };
+      const name = String(err.name || err);
+      return { status: 0, error: name === 'AbortError' ? 'timeout' : 'unreachable' };
     } finally {
       clearTimeout(timer);
     }
@@ -287,12 +288,17 @@ function shape(node, accountLogin) {
     } catch { /* malformed package.json is not worth failing the run over */ }
   }
 
+  // A description that just repeats the repo name tells a reader nothing, so
+  // treat it as missing rather than letting it pad the hygiene score.
+  const rawDesc = node.description?.trim() || null;
+  const description = rawDesc && rawDesc.toLowerCase() !== node.name.toLowerCase() ? rawDesc : null;
+
   const repo = {
     name: node.name,
     nameWithOwner: node.nameWithOwner,
     account: accountLogin,
     url: node.url,
-    description: node.description,
+    description,
     homepage: node.homepageUrl,
     brand: brandOf(node.name),
     archived: node.isArchived,
