@@ -1,0 +1,14 @@
+{
+  "name": "zao-repos",
+  "private": true,
+  "type": "module",
+  "description": "Live dashboard over every public ZAO GitHub repository",
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "serve": "node --run fetch && cd docs && python -m http.server 8199"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.0"
+  }
+}

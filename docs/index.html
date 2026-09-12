@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZAO Repo Dashboard</title>
+<meta name="description" content="Live activity, deploy health, hygiene and portfolio view across every public ZAO GitHub repository.">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --panel-2: #fbfbfd;
+  --ink: #12161c;
+  --ink-2: #5a6472;
+  --ink-3: #8a94a3;
+  --line: #e3e6ec;
+  --line-2: #eef0f4;
+  --accent: #0a1628;
+  --accent-ink: #ffffff;
+  --hot: #17a673;
+  --active: #2f8fe0;
+  --warm: #d8a326;
+  --cooling: #dd7d33;
+  --dormant: #b6404a;
+  --ok: #17a673;
+  --bad: #b6404a;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(16,22,32,.05), 0 4px 14px rgba(16,22,32,.04);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0b0e13;
+    --panel: #141920;
+    --panel-2: #10151b;
+    --ink: #e9edf3;
+    --ink-2: #9aa5b4;
+    --ink-3: #6b7686;
+    --line: #232a34;
+    --line-2: #1c222b;
+    --accent: #e9edf3;
+    --accent-ink: #0b0e13;
+    --hot: #2fd39b;
+    --active: #58b0f5;
+    --warm: #edc054;
+    --cooling: #f0975a;
+    --dormant: #e2707a;
+    --ok: #2fd39b;
+    --bad: #e2707a;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b0e13; --panel: #141920; --panel-2: #10151b;
+  --ink: #e9edf3; --ink-2: #9aa5b4; --ink-3: #6b7686;
+  --line: #232a34; --line-2: #1c222b;
+  --accent: #e9edf3; --accent-ink: #0b0e13;
+  --hot: #2fd39b; --active: #58b0f5; --warm: #edc054; --cooling: #f0975a; --dormant: #e2707a;
+  --ok: #2fd39b; --bad: #e2707a;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.25);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 14px/1.5 ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 20px 72px; }
+
+/* header */
+header { border-bottom: 1px solid var(--line); background: var(--panel); }
+.head-in { max-width: 1240px; margin: 0 auto; padding: 20px; display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; }
+h1 { font-size: 19px; margin: 0; letter-spacing: -.01em; font-weight: 650; }
+.sub { color: var(--ink-3); font-size: 12.5px; }
+.head-right { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+button, .btn {
+  font: inherit; font-size: 12.5px; cursor: pointer;
+  background: var(--panel); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 7px; padding: 5px 11px;
+}
+button:hover { border-color: var(--ink-3); }
+button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+/* tabs */
+nav.tabs { display: flex; gap: 2px; overflow-x: auto; border-bottom: 1px solid var(--line); background: var(--panel); }
+nav.tabs .inner { max-width: 1240px; margin: 0 auto; padding: 0 20px; display: flex; gap: 2px; width: 100%; }
+.tab {
+  border: 0; background: none; border-bottom: 2px solid transparent;
+  padding: 11px 13px; font-size: 13.5px; color: var(--ink-2); border-radius: 0; white-space: nowrap;
+}
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); font-weight: 600; }
+
+/* cards */
+.grid { display: grid; gap: 12px; }
+.stats { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin: 20px 0; }
+.stat {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 13px 15px; box-shadow: var(--shadow);
+}
+.stat .k { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); }
+.stat .v { font-size: 25px; font-weight: 600; letter-spacing: -.02em; margin-top: 3px; font-variant-numeric: tabular-nums; }
+.stat .n { font-size: 12px; color: var(--ink-3); margin-top: 1px; }
+
+.panel {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 16px; overflow: hidden;
+}
+.panel > h2 {
+  font-size: 13px; margin: 0; padding: 12px 15px; border-bottom: 1px solid var(--line-2);
+  font-weight: 600; letter-spacing: -.005em;
+  display: flex; align-items: baseline; gap: 9px;
+}
+.panel > h2 .hint { font-weight: 400; color: var(--ink-3); font-size: 12px; }
+.panel .body { padding: 15px; }
+
+/* table */
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line-2); white-space: nowrap; }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-3); font-weight: 600; position: sticky; top: 0; background: var(--panel); cursor: pointer; }
+th:hover { color: var(--ink); }
+tbody tr:hover { background: var(--panel-2); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.name a { font-weight: 550; text-decoration: none; }
+td.name a:hover { text-decoration: underline; }
+td.desc { white-space: normal; color: var(--ink-2); max-width: 380px; min-width: 220px; font-size: 12.5px; }
+
+/* bits */
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; vertical-align: -1px; margin-right: 5px; }
+.pill {
+  display: inline-block; font-size: 11px; padding: 1.5px 7px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--ink-2); background: var(--panel-2);
+}
+.pill.hot { color: var(--hot); border-color: color-mix(in srgb, var(--hot) 35%, transparent); }
+.pill.active { color: var(--active); border-color: color-mix(in srgb, var(--active) 35%, transparent); }
+.pill.warm { color: var(--warm); border-color: color-mix(in srgb, var(--warm) 35%, transparent); }
+.pill.cooling { color: var(--cooling); border-color: color-mix(in srgb, var(--cooling) 35%, transparent); }
+.pill.dormant { color: var(--dormant); border-color: color-mix(in srgb, var(--dormant) 35%, transparent); }
+.pill.up { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 35%, transparent); }
+.pill.down { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 35%, transparent); }
+.muted { color: var(--ink-3); }
+
+/* bars */
+.barrow { display: grid; grid-template-columns: 130px 1fr 46px; gap: 10px; align-items: center; margin-bottom: 7px; font-size: 12.5px; }
+.barrow .label { color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bartrack { background: var(--line-2); border-radius: 4px; height: 8px; overflow: hidden; }
+.bar { height: 100%; border-radius: 4px; background: var(--ink-2); }
+.barrow .n { text-align: right; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+/* months chart */
+.months { display: flex; gap: 4px; align-items: flex-end; height: 110px; }
+.months .m { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 5px; min-width: 0; }
+.months .mb { width: 100%; background: var(--active); border-radius: 3px 3px 0 0; min-height: 2px; }
+.months .ml { font-size: 9.5px; color: var(--ink-3); writing-mode: vertical-rl; }
+
+/* hygiene */
+.score { display: inline-flex; align-items: center; gap: 7px; }
+.scorebar { width: 54px; height: 6px; background: var(--line-2); border-radius: 3px; overflow: hidden; }
+.scorebar i { display: block; height: 100%; }
+.checks { letter-spacing: 1px; font-size: 12px; }
+.checks .y { color: var(--ok); }
+.checks .n { color: var(--ink-3); }
+
+/* portfolio */
+.brand-group { margin-bottom: 22px; }
+.brand-group h3 { font-size: 13px; margin: 0 0 9px; display: flex; align-items: baseline; gap: 8px; }
+.brand-group h3 .c { font-weight: 400; color: var(--ink-3); font-size: 12px; }
+.cards { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 12px 13px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 6px; min-width: 0;
+}
+.card .t { font-weight: 600; font-size: 13.5px; text-decoration: none; overflow: hidden; text-overflow: ellipsis; }
+.card .t:hover { text-decoration: underline; }
+.card .d { color: var(--ink-2); font-size: 12.5px; flex: 1; }
+.card .meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 11.5px; color: var(--ink-3); }
+
+/* filters */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 14px; }
+input[type="search"] {
+  font: inherit; font-size: 13px; padding: 6px 11px; min-width: 200px; flex: 1;
+  background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 7px;
+}
+select {
+  font: inherit; font-size: 12.5px; padding: 6px 9px;
+  background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 7px;
+}
+.count { color: var(--ink-3); font-size: 12.5px; }
+
+footer { color: var(--ink-3); font-size: 12px; padding: 22px 0 0; border-top: 1px solid var(--line); margin-top: 26px; }
+.err { padding: 40px 20px; color: var(--bad); }
+[hidden] { display: none !important; }
+
+@media (max-width: 640px) {
+  .head-in { padding: 15px 16px; }
+  .wrap { padding: 0 16px 56px; }
+  nav.tabs .inner { padding: 0 16px; }
+  .barrow { grid-template-columns: 96px 1fr 40px; }
+  .months .ml { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-in">
+    <div>
+      <h1>ZAO Repo Dashboard</h1>
+      <div class="sub" id="subtitle">loading...</div>
+    </div>
+    <div class="head-right">
+      <button id="theme" title="Toggle theme">Theme</button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="inner" role="tablist">
+    <button class="tab" role="tab" data-tab="overview" aria-selected="true">Overview</button>
+    <button class="tab" role="tab" data-tab="activity" aria-selected="false">Activity</button>
+    <button class="tab" role="tab" data-tab="deploys" aria-selected="false">Deploys</button>
+    <button class="tab" role="tab" data-tab="hygiene" aria-selected="false">Hygiene</button>
+    <button class="tab" role="tab" data-tab="portfolio" aria-selected="false">Portfolio</button>
+    <button class="tab" role="tab" data-tab="all" aria-selected="false">All repos</button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div id="app"><p class="muted" style="padding:40px 0">Loading data.json...</p></div>
+  <footer>
+    <span id="foot"></span>
+    Public repositories only - private repos are never fetched or published.
+    Rebuilt hourly by GitHub Actions.
+  </footer>
+</div>
+
+<script>
+const $ = (s, r = document) => r.querySelector(s);
+const el = (t, p = {}, ...kids) => {
+  const n = Object.assign(document.createElement(t), p);
+  for (const k of kids.flat()) if (k != null) n.append(k.nodeType ? k : String(k));
+  return n;
+};
+const fmt = (n) => (n == null ? '-' : n.toLocaleString('en-US'));
+const esc = (s) => String(s ?? '');
+
+function ago(iso) {
+  if (!iso) return '-';
+  const d = Math.floor((Date.now() - new Date(iso)) / 864e5);
+  if (d <= 0) return 'today';
+  if (d === 1) return 'yesterday';
+  if (d < 30) return d + 'd ago';
+  if (d < 365) return Math.round(d / 30) + 'mo ago';
+  const y = (d / 365).toFixed(1).replace('.0', '');
+  return y + 'y ago';
+}
+
+const STALE_LABEL = { hot: '7d', active: '30d', warm: '90d', cooling: '1y', dormant: '1y+' };
+
+let DATA = null;
+let TAB = location.hash.slice(1) || 'overview';
+
+/* ------------------------------------------------------------------ shared */
+
+function statCard(k, v, n) {
+  return el('div', { className: 'stat' },
+    el('div', { className: 'k' }, k),
+    el('div', { className: 'v' }, v),
+    n ? el('div', { className: 'n' }, n) : null);
+}
+
+function bars(rows, color) {
+  const max = Math.max(1, ...rows.map((r) => r.count));
+  return el('div', {},
+    rows.map((r) => el('div', { className: 'barrow' },
+      el('div', { className: 'label', title: r.name }, r.name),
+      el('div', { className: 'bartrack' },
+        el('div', {
+          className: 'bar',
+          style: `width:${(r.count / max) * 100}%${r.color || color ? `;background:${r.color || color}` : ''}`,
+        })),
+      el('div', { className: 'n' }, fmt(r.count)))));
+}
+
+function panel(title, hint, ...body) {
+  return el('section', { className: 'panel' },
+    el('h2', {}, title, hint ? el('span', { className: 'hint' }, hint) : null),
+    el('div', { className: 'body' }, body));
+}
+
+function repoLink(r) {
+  return el('a', { href: r.url, target: '_blank', rel: 'noopener' }, r.name);
+}
+
+function stalePill(r) {
+  return el('span', { className: 'pill ' + r.staleness, title: `pushed ${ago(r.pushedAt)}` }, STALE_LABEL[r.staleness]);
+}
+
+/**
+ * Sortable table. cols: {key, label, num?, get(r), cell(r)}
+ */
+function table(rows, cols, initialSort) {
+  let sortKey = initialSort?.key ?? cols[0].key;
+  let desc = initialSort?.desc ?? true;
+  const wrap = el('div', { className: 'tablewrap' });
+  const t = el('table');
+  const thead = el('thead');
+  const tbody = el('tbody');
+  t.append(thead, tbody);
+  wrap.append(t);
+
+  const render = () => {
+    const col = cols.find((c) => c.key === sortKey) || cols[0];
+    const sorted = rows.slice().sort((a, b) => {
+      const x = col.get(a), y = col.get(b);
+      if (x == null && y == null) return 0;
+      if (x == null) return 1;
+      if (y == null) return -1;
+      const cmp = typeof x === 'string' ? x.localeCompare(y) : x - y;
+      return desc ? -cmp : cmp;
+    });
+    thead.replaceChildren(el('tr', {},
+      cols.map((c) => el('th', {
+        className: c.num ? 'num' : '',
+        title: 'Sort by ' + c.label,
+        onclick: () => { if (sortKey === c.key) desc = !desc; else { sortKey = c.key; desc = true; } render(); },
+      }, c.label + (sortKey === c.key ? (desc ? ' ↓' : ' ↑') : '')))));
+    tbody.replaceChildren(...sorted.map((r) =>
+      el('tr', {}, cols.map((c) => {
+        const td = el('td', { className: (c.num ? 'num ' : '') + (c.cls || '') });
+        const v = c.cell(r);
+        if (v != null) td.append(v.nodeType ? v : String(v));
+        return td;
+      }))));
+  };
+  render();
+  return wrap;
+}
+
+/* --------------------------------------------------------------- overview */
+
+function viewOverview() {
+  const s = DATA.summary;
+  const out = el('div');
+
+  out.append(el('div', { className: 'grid stats' },
+    statCard('Public repos', fmt(s.counts.total), `${s.counts.live} live / ${s.counts.archived} archived`),
+    statCard('Commits, 30d', fmt(s.totals.commits30), `${fmt(s.totals.commits90)} in 90d`),
+    statCard('Commits, 1y', fmt(s.totals.commits365), `${fmt(s.totals.commitsAll)} all time`),
+    statCard('Live deploys', fmt(s.counts.deployed), deploySummary()),
+    statCard('Stars', fmt(s.totals.stars), `${fmt(s.totals.forks)} forks`),
+    statCard('Open issues / PRs', `${fmt(s.totals.openIssues)} / ${fmt(s.totals.openPRs)}`),
+    statCard('Hygiene score', s.hygieneAverage + '%', `${s.hygieneGaps.noTopics} repos have no topics`),
+    statCard('Code on disk', s.totals.sizeMB + ' MB', `${s.counts.withCI} repos with CI`)));
+
+  // 12 month push activity
+  const months = s.months;
+  const maxM = Math.max(1, ...months.map((m) => m.pushes));
+  out.append(panel('Repos pushed per month', 'last 12 months',
+    el('div', { className: 'months' },
+      months.map((m) => el('div', { className: 'm', title: `${m.key}: ${m.pushes} repos pushed, ${m.created} created` },
+        el('div', { className: 'mb', style: `height:${(m.pushes / maxM) * 88}px` }),
+        el('div', { className: 'ml' }, m.key.slice(2)))))));
+
+  const two = el('div', { className: 'grid', style: 'grid-template-columns:repeat(auto-fit,minmax(300px,1fr))' });
+  two.append(
+    panel('Languages', null, bars(s.languages.slice(0, 10).map((l) => ({
+      ...l, color: (DATA.repos.find((r) => r.language === l.name) || {}).languageColor,
+    })))),
+    panel('Product lines', null, bars(s.brands)),
+    panel('Freshness', 'non-archived repos by last push', bars(
+      s.staleness.map((x) => ({ name: `${x.name} (${STALE_LABEL[x.name]})`, count: x.count })))),
+    panel('Accounts', null, bars(s.accounts)));
+  out.append(two);
+
+  const c = DATA.contributions;
+  const rows = Object.entries(c);
+  if (rows.length) {
+    out.append(panel('Contribution graph', 'public activity, trailing 12 months',
+      el('div', { className: 'grid', style: 'grid-template-columns:repeat(auto-fit,minmax(220px,1fr))' },
+        rows.map(([login, x]) => el('div', { className: 'stat' },
+          el('div', { className: 'k' }, login),
+          el('div', { className: 'v' }, fmt(x.total)),
+          el('div', { className: 'n' }, `${fmt(x.commits)} commits, ${fmt(x.prs)} PRs, ${fmt(x.newRepos)} new repos`))))));
+  }
+  return out;
+}
+
+function deploySummary() {
+  const d = DATA.repos.filter((r) => r.deploy);
+  const up = d.filter((r) => r.deploy.status >= 200 && r.deploy.status < 400).length;
+  return `${up} up, ${d.length - up} failing`;
+}
+
+/* --------------------------------------------------------------- activity */
+
+function viewActivity() {
+  const live = DATA.repos.filter((r) => !r.archived);
+  const out = el('div');
+
+  const hot = live.filter((r) => r.commits30 > 0).sort((a, b) => b.commits30 - a.commits30);
+  const dying = live.filter((r) => r.ageDays > 180 && !r.fork).sort((a, b) => b.ageDays - a.ageDays);
+
+  out.append(el('div', { className: 'grid stats' },
+    statCard('Pushed this week', fmt(live.filter((r) => r.staleness === 'hot').length)),
+    statCard('Active repos, 30d', fmt(hot.length), 'with at least one commit'),
+    statCard('Untouched 6mo+', fmt(dying.length), 'archive candidates'),
+    statCard('Archived already', fmt(DATA.summary.counts.archived))));
+
+  const cols = [
+    { key: 'name', label: 'Repo', get: (r) => r.name, cell: repoLink, cls: 'name' },
+    { key: 'acct', label: 'Account', get: (r) => r.account, cell: (r) => el('span', { className: 'muted' }, r.account) },
+    { key: 'c30', label: 'Commits 30d', num: true, get: (r) => r.commits30, cell: (r) => fmt(r.commits30) },
+    { key: 'c90', label: '90d', num: true, get: (r) => r.commits90, cell: (r) => fmt(r.commits90) },
+    { key: 'c365', label: '1y', num: true, get: (r) => r.commits365, cell: (r) => fmt(r.commits365) },
+    { key: 'all', label: 'Total', num: true, get: (r) => r.commitsAll, cell: (r) => fmt(r.commitsAll) },
+    { key: 'contrib', label: 'People', num: true, get: (r) => r.contributors, cell: (r) => fmt(r.contributors) },
+    { key: 'pushed', label: 'Last push', get: (r) => new Date(r.pushedAt).getTime(), cell: (r) => el('span', {}, ago(r.pushedAt), ' ', stalePill(r)) },
+    { key: 'msg', label: 'Last commit', get: (r) => r.lastCommit?.message || '', cell: (r) => el('span', { className: 'muted' }, (r.lastCommit?.message || '').slice(0, 60)), cls: 'desc' },
+  ];
+
+  out.append(panel('Where the work is going', `${hot.length} repos with commits in the last 30 days`,
+    table(hot, cols, { key: 'c30', desc: true })));
+
+  out.append(panel('Archive candidates', 'not pushed in 6+ months, not archived, not a fork',
+    table(dying, [
+      cols[0], cols[1],
+      { key: 'age', label: 'Idle', num: true, get: (r) => r.ageDays, cell: (r) => r.ageDays + 'd' },
+      { key: 'all', label: 'Commits', num: true, get: (r) => r.commitsAll, cell: (r) => fmt(r.commitsAll) },
+      { key: 'stars', label: 'Stars', num: true, get: (r) => r.stars, cell: (r) => fmt(r.stars) },
+      { key: 'deploy', label: 'Deploy', get: (r) => r.homepage || '', cell: (r) => r.homepage ? el('span', { className: 'muted' }, 'yes') : el('span', { className: 'muted' }, '-') },
+      { key: 'desc', label: 'Description', get: (r) => r.description || '', cell: (r) => r.description || el('span', { className: 'muted' }, 'no description'), cls: 'desc' },
+    ], { key: 'age', desc: true })));
+
+  return out;
+}
+
+/* ---------------------------------------------------------------- deploys */
+
+function viewDeploys() {
+  const d = DATA.repos.filter((r) => r.homepage);
+  const up = (r) => r.deploy && r.deploy.status >= 200 && r.deploy.status < 400;
+  const down = d.filter((r) => !up(r));
+  const vercel = d.filter((r) => /vercel\.app$/i.test(hostOf(r.homepage)));
+  const custom = d.filter((r) => !/vercel\.app$|github\.io$|netlify\.app$|pages\.dev$/i.test(hostOf(r.homepage)));
+
+  const out = el('div');
+  out.append(el('div', { className: 'grid stats' },
+    statCard('Deploy URLs', fmt(d.length)),
+    statCard('Responding', fmt(d.length - down.length)),
+    statCard('Failing', fmt(down.length), down.length ? 'fix or drop the homepage field' : 'all green'),
+    statCard('On a real domain', fmt(custom.length), `${vercel.length} still on *.vercel.app`)));
+
+  const cols = [
+    { key: 'name', label: 'Repo', get: (r) => r.name, cell: repoLink, cls: 'name' },
+    {
+      key: 'status', label: 'Status', get: (r) => r.deploy?.status ?? -1,
+      cell: (r) => el('span', { className: 'pill ' + (up(r) ? 'up' : 'down') },
+        r.deploy ? (r.deploy.status || r.deploy.error || 'unreachable') : 'unchecked'),
+    },
+    {
+      key: 'url', label: 'URL', get: (r) => hostOf(r.homepage),
+      cell: (r) => el('a', { href: r.homepage, target: '_blank', rel: 'noopener' }, hostOf(r.homepage)),
+    },
+    {
+      key: 'host', label: 'Host', get: (r) => hostKind(r.homepage),
+      cell: (r) => el('span', { className: 'pill' }, hostKind(r.homepage)),
+    },
+    { key: 'pushed', label: 'Last push', get: (r) => new Date(r.pushedAt).getTime(), cell: (r) => el('span', {}, ago(r.pushedAt), ' ', stalePill(r)) },
+    {
+      key: 'ci', label: 'Last CI', get: (r) => r.lastRun?.conclusion || '',
+      cell: (r) => r.lastRun
+        ? el('a', { href: r.lastRun.url, target: '_blank', rel: 'noopener', className: 'pill ' + (r.lastRun.conclusion === 'success' ? 'up' : 'down') }, r.lastRun.conclusion || r.lastRun.status)
+        : el('span', { className: 'muted' }, 'no CI'),
+    },
+    { key: 'brand', label: 'Line', get: (r) => r.brand, cell: (r) => el('span', { className: 'muted' }, r.brand) },
+  ];
+
+  if (down.length) {
+    out.append(panel('Broken deploys', 'homepage is set but the URL does not respond', table(down, cols, { key: 'status', desc: false })));
+  }
+  out.append(panel('All deploys', `${d.length} repos advertise a live URL`, table(d, cols, { key: 'pushed', desc: true })));
+  return out;
+}
+
+function hostOf(u) { try { return new URL(u).host; } catch { return u || ''; } }
+function hostKind(u) {
+  const h = hostOf(u);
+  if (/vercel\.app$/i.test(h)) return 'Vercel (default)';
+  if (/github\.io$/i.test(h)) return 'GitHub Pages';
+  if (/netlify\.app$/i.test(h)) return 'Netlify';
+  if (/pages\.dev$/i.test(h)) return 'Cloudflare';
+  return 'Custom domain';
+}
+
+/* ---------------------------------------------------------------- hygiene */
+
+const CHECK_LABELS = {
+  description: 'Desc', topics: 'Topics', readme: 'README',
+  license: 'License', homepage: 'Homepage', ci: 'CI', gitignore: '.gitignore',
+};
+
+function viewHygiene() {
+  const repos = DATA.repos.filter((r) => !r.archived && !r.fork);
+  const g = DATA.summary.hygieneGaps;
+  const out = el('div');
+
+  out.append(el('div', { className: 'grid stats' },
+    statCard('Average score', DATA.summary.hygieneAverage + '%', `${repos.length} live, non-fork repos`),
+    statCard('No topics', fmt(g.noTopics), 'hurts discoverability'),
+    statCard('No description', fmt(g.noDescription)),
+    statCard('No README', fmt(g.noReadme)),
+    statCard('No license', fmt(g.noLicense)),
+    statCard('No CI', fmt(g.noCI))));
+
+  const scoreCell = (r) => {
+    const c = r.hygiene.score >= 70 ? 'var(--ok)' : r.hygiene.score >= 40 ? 'var(--warm)' : 'var(--bad)';
+    return el('span', { className: 'score' },
+      el('span', { className: 'scorebar' }, el('i', { style: `width:${r.hygiene.score}%;background:${c}` })),
+      el('span', {}, r.hygiene.score + '%'));
+  };
+  const checksCell = (r) => el('span', { className: 'checks' },
+    Object.entries(r.hygiene.checks).map(([k, v]) =>
+      el('span', { className: v ? 'y' : 'n', title: CHECK_LABELS[k] + (v ? ': ok' : ': missing') }, v ? '●' : '○')));
+
+  const cols = [
+    { key: 'name', label: 'Repo', get: (r) => r.name, cell: repoLink, cls: 'name' },
+    { key: 'score', label: 'Score', num: true, get: (r) => r.hygiene.score, cell: scoreCell },
+    { key: 'checks', label: Object.values(CHECK_LABELS).join(' / '), get: (r) => r.hygiene.passed, cell: checksCell },
+    { key: 'claude', label: 'CLAUDE.md', get: (r) => (r.hasClaudeMd ? 1 : 0), cell: (r) => r.hasClaudeMd ? el('span', { className: 'pill up' }, 'yes') : el('span', { className: 'muted' }, '-') },
+    { key: 'topics', label: 'Topics', get: (r) => r.topics.length, cell: (r) => r.topics.length ? r.topics.slice(0, 3).join(', ') : el('span', { className: 'muted' }, 'none') },
+    { key: 'license', label: 'License', get: (r) => r.license || '', cell: (r) => r.license || el('span', { className: 'muted' }, '-') },
+    { key: 'pushed', label: 'Last push', get: (r) => new Date(r.pushedAt).getTime(), cell: (r) => ago(r.pushedAt) },
+  ];
+
+  out.append(panel('Worst first', 'filled dot = present, hollow = missing',
+    table(repos, cols, { key: 'score', desc: false })));
+  return out;
+}
+
+/* -------------------------------------------------------------- portfolio */
+
+function viewPortfolio() {
+  const repos = DATA.repos.filter((r) => !r.archived && !r.fork && !r.empty);
+  const byBrand = {};
+  for (const r of repos) (byBrand[r.brand] ||= []).push(r);
+  const order = Object.entries(byBrand).sort((a, b) => b[1].length - a[1].length);
+  const out = el('div', { style: 'margin-top:20px' });
+
+  for (const [brand, list] of order) {
+    list.sort((a, b) => (a.pushedAt < b.pushedAt ? 1 : -1));
+    out.append(el('div', { className: 'brand-group' },
+      el('h3', {}, brand, el('span', { className: 'c' }, `${list.length} repo${list.length > 1 ? 's' : ''}`)),
+      el('div', { className: 'cards' }, list.map((r) => el('div', { className: 'card' },
+        el('a', { className: 't', href: r.url, target: '_blank', rel: 'noopener' }, r.name),
+        el('div', { className: 'd' }, r.description || el('span', { className: 'muted' }, 'No description yet.')),
+        el('div', { className: 'meta' },
+          r.language ? el('span', {}, el('span', { className: 'dot', style: `background:${r.languageColor || 'var(--ink-3)'}` }), r.language) : null,
+          r.stars ? el('span', {}, '★ ' + r.stars) : null,
+          stalePill(r),
+          r.homepage ? el('a', { href: r.homepage, target: '_blank', rel: 'noopener', className: 'pill' }, 'live') : null,
+          el('span', { className: 'muted' }, r.account)))))));
+  }
+  return out;
+}
+
+/* ------------------------------------------------------------------- all */
+
+function viewAll() {
+  const out = el('div', { style: 'margin-top:20px' });
+  const search = el('input', { type: 'search', placeholder: 'Filter by name, description, topic, language...' });
+  const acct = el('select', {}, el('option', { value: '' }, 'All accounts'),
+    DATA.summary.accounts.map((a) => el('option', { value: a.name }, `${a.name} (${a.count})`)));
+  const lang = el('select', {}, el('option', { value: '' }, 'All languages'),
+    DATA.summary.languages.map((a) => el('option', { value: a.name }, `${a.name} (${a.count})`)));
+  const brand = el('select', {}, el('option', { value: '' }, 'All product lines'),
+    DATA.summary.brands.map((a) => el('option', { value: a.name }, `${a.name} (${a.count})`)));
+  const state = el('select', {},
+    el('option', { value: 'live' }, 'Live only'),
+    el('option', { value: '' }, 'Everything'),
+    el('option', { value: 'archived' }, 'Archived only'),
+    el('option', { value: 'fork' }, 'Forks only'));
+  const count = el('span', { className: 'count' });
+
+  const cols = [
+    { key: 'name', label: 'Repo', get: (r) => r.name, cell: repoLink, cls: 'name' },
+    { key: 'acct', label: 'Account', get: (r) => r.account, cell: (r) => el('span', { className: 'muted' }, r.account) },
+    {
+      key: 'lang', label: 'Language', get: (r) => r.language || '',
+      cell: (r) => r.language ? el('span', {}, el('span', { className: 'dot', style: `background:${r.languageColor || 'var(--ink-3)'}` }), r.language) : el('span', { className: 'muted' }, '-'),
+    },
+    { key: 'stars', label: 'Stars', num: true, get: (r) => r.stars, cell: (r) => fmt(r.stars) },
+    { key: 'commits', label: 'Commits', num: true, get: (r) => r.commitsAll, cell: (r) => fmt(r.commitsAll) },
+    { key: 'size', label: 'Size', num: true, get: (r) => r.sizeKB, cell: (r) => r.sizeKB > 1024 ? (r.sizeKB / 1024).toFixed(1) + ' MB' : r.sizeKB + ' KB' },
+    { key: 'issues', label: 'Issues', num: true, get: (r) => r.openIssues, cell: (r) => fmt(r.openIssues) },
+    { key: 'rel', label: 'Release', get: (r) => r.latestRelease?.at || '', cell: (r) => r.latestRelease ? r.latestRelease.tag : el('span', { className: 'muted' }, '-') },
+    { key: 'created', label: 'Created', get: (r) => new Date(r.createdAt).getTime(), cell: (r) => r.createdAt.slice(0, 10) },
+    { key: 'pushed', label: 'Last push', get: (r) => new Date(r.pushedAt).getTime(), cell: (r) => el('span', {}, ago(r.pushedAt), ' ', stalePill(r)) },
+    { key: 'desc', label: 'Description', get: (r) => r.description || '', cell: (r) => r.description || el('span', { className: 'muted' }, '-'), cls: 'desc' },
+  ];
+
+  const host = el('div');
+  const apply = () => {
+    const q = search.value.trim().toLowerCase();
+    const rows = DATA.repos.filter((r) => {
+      if (acct.value && r.account !== acct.value) return false;
+      if (lang.value && r.language !== lang.value) return false;
+      if (brand.value && r.brand !== brand.value) return false;
+      if (state.value === 'live' && (r.archived || r.fork)) return false;
+      if (state.value === 'archived' && !r.archived) return false;
+      if (state.value === 'fork' && !r.fork) return false;
+      if (!q) return true;
+      return (r.name + ' ' + (r.description || '') + ' ' + r.topics.join(' ') + ' ' + (r.language || '')).toLowerCase().includes(q);
+    });
+    count.textContent = `${rows.length} of ${DATA.repos.length}`;
+    host.replaceChildren(table(rows, cols, { key: 'pushed', desc: true }));
+  };
+  [search, acct, lang, brand, state].forEach((c) => c.addEventListener('input', apply));
+
+  out.append(el('div', { className: 'filters' }, search, acct, lang, brand, state, count),
+    el('section', { className: 'panel' }, el('div', { className: 'body', style: 'padding:0' }, host)));
+  apply();
+  return out;
+}
+
+/* -------------------------------------------------------------------- boot */
+
+const VIEWS = { overview: viewOverview, activity: viewActivity, deploys: viewDeploys, hygiene: viewHygiene, portfolio: viewPortfolio, all: viewAll };
+
+function render() {
+  document.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === TAB)));
+  $('#app').replaceChildren((VIEWS[TAB] || viewOverview)());
+}
+
+document.querySelectorAll('.tab').forEach((t) =>
+  t.addEventListener('click', () => { TAB = t.dataset.tab; location.hash = TAB; render(); }));
+addEventListener('hashchange', () => { const h = location.hash.slice(1); if (VIEWS[h]) { TAB = h; render(); } });
+
+$('#theme').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : cur === 'light' ? '' : 'dark';
+  if (next) document.documentElement.setAttribute('data-theme', next);
+  else document.documentElement.removeAttribute('data-theme');
+  try { localStorage.setItem('zao-repos-theme', next); } catch {}
+});
+try { const t = localStorage.getItem('zao-repos-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch {}
+
+fetch('data.json', { cache: 'no-cache' })
+  .then((r) => { if (!r.ok) throw new Error('data.json ' + r.status); return r.json(); })
+  .then((d) => {
+    DATA = d;
+    const s = d.summary;
+    $('#subtitle').textContent =
+      `${s.counts.total} public repos across ${s.accounts.length} accounts - updated ${ago(d.generatedAt)}`;
+    $('#foot').textContent = `Generated ${new Date(d.generatedAt).toUTCString()}. `;
+    render();
+  })
+  .catch((e) => {
+    $('#app').replaceChildren(el('div', { className: 'err' },
+      'Could not load data.json: ' + e.message,
+      el('p', { className: 'muted' }, 'The sync workflow may not have run yet. Trigger it from the Actions tab.')));
+  });
+</script>
+</body>
+</html>
