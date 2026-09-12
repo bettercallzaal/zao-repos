@@ -372,7 +372,8 @@ function viewOverview() {
         el('div', { className: 'mtrack' }, el('div', { className: 'mb', style: `height:${Math.max(2, (m.pushes / maxM) * 100)}px` })),
         el('div', { className: 'ml' }, MON[Number(m.key.slice(5)) - 1]))))));
 
-  const two = el('div', { className: 'grid', style: 'grid-template-columns:repeat(auto-fit,minmax(300px,1fr))' });
+  // align-items:start so a short panel does not stretch to match a tall neighbour
+  const two = el('div', { className: 'grid', style: 'grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start' });
   two.append(
     panel('Languages', null, bars(s.languages.slice(0, 10).map((l) => ({
       ...l, color: (DATA.repos.find((r) => r.language === l.name) || {}).languageColor,
@@ -387,7 +388,7 @@ function viewOverview() {
   const rows = Object.entries(c);
   if (rows.length) {
     out.append(panel('Contribution graph', 'public activity, trailing 12 months',
-      el('div', { className: 'grid', style: 'grid-template-columns:repeat(auto-fit,minmax(220px,1fr))' },
+      el('div', { className: 'grid', style: 'grid-template-columns:repeat(auto-fit,minmax(220px,1fr));align-items:start' },
         rows.map(([login, x]) => el('div', { className: 'stat' },
           el('div', { className: 'k' }, login),
           el('div', { className: 'v' }, fmt(x.total)),
