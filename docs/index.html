@@ -117,7 +117,7 @@ nav.tabs .inner { max-width: 1240px; margin: 0 auto; padding: 0 20px; display: f
   display: flex; align-items: baseline; gap: 9px;
 }
 .panel > h2 .hint { font-weight: 400; color: var(--ink-3); font-size: 12px; }
-.panel .body { padding: 15px; }
+.panel .panel-body { padding: 15px; }
 
 /* table */
 .tablewrap { overflow-x: auto; }
@@ -290,7 +290,7 @@ function bars(rows, color) {
 function panel(title, hint, ...body) {
   return el('section', { className: 'panel' },
     el('h2', {}, title, hint ? el('span', { className: 'hint' }, hint) : null),
-    el('div', { className: 'body' }, body));
+    el('div', { className: 'panel-body' }, body));
 }
 
 function repoLink(r) {
@@ -629,7 +629,7 @@ function viewAll() {
   [search, acct, lang, brand, state].forEach((c) => c.addEventListener('input', apply));
 
   out.append(el('div', { className: 'filters' }, search, acct, lang, brand, state, count),
-    el('section', { className: 'panel' }, el('div', { className: 'body', style: 'padding:0' }, host)));
+    el('section', { className: 'panel' }, el('div', { className: 'panel-body', style: 'padding:0' }, host)));
   apply();
   return out;
 }
