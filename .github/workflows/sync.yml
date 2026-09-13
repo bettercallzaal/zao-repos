@@ -1,0 +1,43 @@
+name: Sync repo data
+
+# GitHub Pages serves main:/docs directly, so this workflow only has to keep
+# docs/data.json fresh. Pushing it is what redeploys the page.
+
+on:
+  schedule:
+    - cron: '17 * * * *'   # hourly, off the top of the hour
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Fetch repo data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch.mjs
+
+      - name: Commit data.json
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add docs/data.json
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "chore: refresh repo data $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
