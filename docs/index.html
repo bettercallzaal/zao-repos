@@ -451,6 +451,10 @@ function viewDeploys() {
   const d = DATA.repos.filter((r) => r.homepage);
   const up = (r) => r.deploy && r.deploy.status >= 200 && r.deploy.status < 400;
   const down = d.filter((r) => !up(r));
+  // A dead link on an archived repo is expected, not a task. Keep those out of
+  // the actionable list so the count reflects work actually worth doing.
+  const downLive = down.filter((r) => !r.archived);
+  const downArchived = down.filter((r) => r.archived);
   const vercel = d.filter((r) => /vercel\.app$/i.test(hostOf(r.homepage)));
   const custom = d.filter((r) => !/vercel\.app$|github\.io$|netlify\.app$|pages\.dev$/i.test(hostOf(r.homepage)));
 
@@ -458,11 +462,15 @@ function viewDeploys() {
   out.append(el('div', { className: 'grid stats' },
     statCard('Deploy URLs', fmt(d.length)),
     statCard('Responding', fmt(d.length - down.length)),
-    statCard('Failing', fmt(down.length), down.length ? 'fix or drop the homepage field' : 'all green'),
+    statCard('Failing', fmt(downLive.length),
+      downArchived.length ? `plus ${downArchived.length} on archived repos` : (downLive.length ? 'fix or drop the homepage field' : 'all green')),
     statCard('On a real domain', fmt(custom.length), `${vercel.length} still on *.vercel.app`)));
 
   const cols = [
-    { key: 'name', label: 'Repo', get: (r) => r.name, cell: repoLink, cls: 'name' },
+    {
+      key: 'name', label: 'Repo', get: (r) => r.name, cls: 'name',
+      cell: (r) => el('span', {}, repoLink(r), r.archived ? el('span', { className: 'pill', style: 'margin-left:6px' }, 'archived') : null),
+    },
     {
       key: 'status', label: 'Status', get: (r) => r.deploy?.status ?? -1,
       cell: (r) => el('span', { className: 'pill ' + (up(r) ? 'up' : 'down') },
@@ -486,8 +494,13 @@ function viewDeploys() {
     { key: 'brand', label: 'Line', get: (r) => r.brand, cell: (r) => el('span', { className: 'muted' }, r.brand) },
   ];
 
-  if (down.length) {
-    out.append(panel('Broken deploys', 'homepage is set but the URL does not respond', table(down, cols, { key: 'status', desc: false })));
+  if (downLive.length) {
+    out.append(panel('Broken deploys', 'active repos whose homepage URL does not respond',
+      table(downLive, cols, { key: 'status', desc: false })));
+  }
+  if (downArchived.length) {
+    out.append(panel('Broken, but archived', 'no action needed unless the repo comes back',
+      table(downArchived, cols, { key: 'status', desc: false })));
   }
   out.append(panel('All deploys', `${d.length} repos advertise a live URL`, table(d, cols, { key: 'pushed', desc: true })));
   return out;
