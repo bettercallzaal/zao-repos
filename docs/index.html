@@ -220,6 +220,7 @@ footer { color: var(--ink-3); font-size: 12px; padding: 22px 0 0; border-top: 1p
     <div class="head-right">
       <a href="https://bettercallzaal.com/projects/">Project catalog</a>
       <a href="https://github.com/bettercallzaal/zao-repos/actions/workflows/sync.yml" target="_blank" rel="noopener">Sync status</a>
+      <button id="refresh" type="button">Refresh data</button>
       <button id="theme" title="Toggle theme">Theme</button>
     </div>
   </div>
@@ -305,6 +306,17 @@ function repoLink(r) {
 
 function stalePill(r) {
   return el('span', { className: 'pill ' + r.staleness, title: `pushed ${ago(r.pushedAt)}` }, STALE_LABEL[r.staleness]);
+}
+
+function websiteLink(r) {
+  const status = r.deploy?.status;
+  const available = status >= 200 && status < 400;
+  const knownFailure = status >= 400;
+  const label = available ? 'Available' : knownFailure ? 'Unavailable' : 'Unknown';
+  const checked = r.deploy?.checkedAt ? `Last checked ${new Date(r.deploy.checkedAt).toUTCString()}` : 'Not checked yet';
+  return el('a', { href: r.homepage, target: '_blank', rel: 'noopener',
+    className: 'pill ' + (available ? 'up' : knownFailure ? 'down' : ''),
+    title: checked, 'aria-label': `${r.name} website: ${label}. ${checked}` }, label);
 }
 
 /**
@@ -465,7 +477,7 @@ function viewDeploys() {
   const out = el('div');
   out.append(el('div', { className: 'grid stats' },
     statCard('Deploy URLs', fmt(d.length)),
-    statCard('Responding', fmt(d.length - down.length)),
+    statCard('Responding', fmt(d.filter(up).length), 'HTTP reachability at last check'),
     statCard('Failing', fmt(downLive.length),
       downArchived.length ? `plus ${downArchived.length} on archived repos` : (downLive.length ? 'fix or drop the homepage field' : 'all green')),
     statCard('On a real domain', fmt(custom.length), `${vercel.length} still on *.vercel.app`)));
@@ -588,7 +600,7 @@ function viewPortfolio() {
           r.language ? el('span', {}, el('span', { className: 'dot', style: `background:${r.languageColor || 'var(--ink-3)'}` }), r.language) : null,
           r.stars ? el('span', {}, '★ ' + r.stars) : null,
           stalePill(r),
-          r.homepage ? el('a', { href: r.homepage, target: '_blank', rel: 'noopener', className: 'pill' }, 'live') : null,
+          r.homepage ? websiteLink(r) : null,
           el('span', { className: 'muted' }, r.account)))))));
   }
   return out;
@@ -675,25 +687,44 @@ $('#theme').addEventListener('click', () => {
 });
 try { const t = localStorage.getItem('zao-repos-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch {}
 
-fetch('data.json', { cache: 'no-cache' })
-  .then((r) => { if (!r.ok) throw new Error('data.json ' + r.status); return r.json(); })
-  .then((d) => {
+function updateFreshness() {
+  if (!DATA) return;
+  const stale = Date.now() - new Date(DATA.generatedAt).getTime() > 6 * 60 * 60 * 1000;
+  $('#freshness').hidden = !stale;
+  $('#freshness').textContent = stale ? 'This snapshot is over 6 hours old. Check Sync status for the latest refresh.' : '';
+  $('#subtitle').textContent = `${DATA.summary.counts.total} public repos across ${DATA.summary.accounts.length} accounts - updated ${ago(DATA.generatedAt)}`;
+}
+
+let refreshing = false;
+async function loadData() {
+  if (refreshing) return;
+  refreshing = true;
+  $('#refresh').disabled = true;
+  try {
+    const response = await fetch('data.json', { cache: 'no-cache' });
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    const d = await response.json();
     DATA = d;
-    const s = d.summary;
-    $('#subtitle').textContent =
-      `${s.counts.total} public repos across ${s.accounts.length} accounts - updated ${ago(d.generatedAt)}`;
     $('#foot').textContent = `Generated ${new Date(d.generatedAt).toUTCString()}. `;
-    if (Date.now() - new Date(d.generatedAt).getTime() > 6 * 60 * 60 * 1000) {
-      $('#freshness').hidden = false;
-      $('#freshness').textContent = 'This snapshot is over 6 hours old. Check Sync status for the latest refresh.';
-    }
+    updateFreshness();
     render();
-  })
-  .catch((e) => {
-    $('#app').replaceChildren(el('div', { className: 'err' },
-      'Could not load data.json: ' + e.message,
-      el('p', { className: 'muted' }, 'The sync workflow may not have run yet. Trigger it from the Actions tab.')));
-  });
+  } catch (e) {
+    if (DATA) {
+      $('#freshness').hidden = false;
+      $('#freshness').textContent = 'Refresh failed. Showing the last loaded snapshot; try Refresh data again.';
+    } else {
+      $('#app').replaceChildren(el('div', { className: 'err' },
+        'Could not load data.json: ' + e.message,
+        el('p', { className: 'muted' }, 'Try Refresh data or inspect Sync status.')));
+    }
+  } finally {
+    refreshing = false;
+    $('#refresh').disabled = false;
+  }
+}
+$('#refresh').addEventListener('click', loadData);
+setInterval(updateFreshness, 60000);
+loadData();
 </script>
 </body>
 </html>

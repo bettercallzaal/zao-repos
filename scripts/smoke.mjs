@@ -65,6 +65,20 @@ search.value = 'zao';
 search.dispatchEvent(new dom.window.Event('input', { bubbles: true }));
 console.log('filter "zao" ->', app.querySelector('.count').textContent);
 
+document.querySelector('[data-tab="portfolio"]').click();
+for (const link of app.querySelectorAll('a.pill')) {
+  if (!['Available', 'Unavailable', 'Unknown'].includes(link.textContent)) errors.push('unqualified website health label');
+  if (!link.title.includes('checked')) errors.push('website probe timestamp missing');
+}
+const beforeRefresh = app.textContent;
+dom.window.fetch = async () => { throw new Error('offline'); };
+document.querySelector('#refresh').click();
+await new Promise((resolve) => setTimeout(resolve, 50));
+if (app.textContent !== beforeRefresh) errors.push('failed refresh discarded saved data');
+if (document.querySelector('#refresh').disabled) errors.push('refresh button stuck after failure');
+if (!document.querySelector('#freshness').textContent.includes('Refresh failed')) errors.push('refresh error not exposed');
+dom.window.close();
+
 if (errors.length) {
   console.error('\nFAILED:\n' + errors.join('\n'));
   process.exit(1);
