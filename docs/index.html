@@ -78,7 +78,8 @@ header { border-bottom: 1px solid var(--line); background: var(--panel); }
 .head-in { max-width: 1240px; margin: 0 auto; padding: 20px; display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; }
 h1 { font-size: 19px; margin: 0; letter-spacing: -.01em; font-weight: 650; }
 .sub { color: var(--ink-3); font-size: 12.5px; }
-.head-right { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+.head-right { margin-left: auto; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.head-right a { font-size: 12.5px; }
 button, .btn {
   font: inherit; font-size: 12.5px; cursor: pointer;
   background: var(--panel); color: var(--ink);
@@ -214,8 +215,11 @@ footer { color: var(--ink-3); font-size: 12px; padding: 22px 0 0; border-top: 1p
     <div>
       <h1>ZAO Repo Dashboard</h1>
       <div class="sub" id="subtitle">loading...</div>
+      <p class="sub" id="freshness" role="status" hidden></p>
     </div>
     <div class="head-right">
+      <a href="https://bettercallzaal.com/projects/">Project catalog</a>
+      <a href="https://github.com/bettercallzaal/zao-repos/actions/workflows/sync.yml" target="_blank" rel="noopener">Sync status</a>
       <button id="theme" title="Toggle theme">Theme</button>
     </div>
   </div>
@@ -679,6 +683,10 @@ fetch('data.json', { cache: 'no-cache' })
     $('#subtitle').textContent =
       `${s.counts.total} public repos across ${s.accounts.length} accounts - updated ${ago(d.generatedAt)}`;
     $('#foot').textContent = `Generated ${new Date(d.generatedAt).toUTCString()}. `;
+    if (Date.now() - new Date(d.generatedAt).getTime() > 6 * 60 * 60 * 1000) {
+      $('#freshness').hidden = false;
+      $('#freshness').textContent = 'This snapshot is over 6 hours old. Check Sync status for the latest refresh.';
+    }
     render();
   })
   .catch((e) => {
