@@ -4,9 +4,10 @@
   "type": "module",
   "description": "Live dashboard over every public ZAO GitHub repository",
   "scripts": {
+    "test": "node --test scripts/github-json.test.mjs",
     "fetch": "node scripts/fetch.mjs",
     "smoke": "node scripts/smoke.mjs",
-    "serve": "node --run fetch && cd docs && python -m http.server 8199"
+    "serve": "python -m http.server 8199 --directory docs"
   },
   "devDependencies": {
     "jsdom": "^25.0.0"

@@ -10,6 +10,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { githubJson } from './github-json.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = resolve(ROOT, 'docs/data.json');
@@ -61,7 +62,7 @@ const brandOf = (name) => {
 
 async function graphql(query, variables) {
   for (let attempt = 0; attempt < 4; attempt++) {
-    const res = await fetch('https://api.github.com/graphql', {
+    const { response: res, body } = await githubJson('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
         authorization: `bearer ${TOKEN}`,
@@ -70,13 +71,7 @@ async function graphql(query, variables) {
       },
       body: JSON.stringify({ query, variables }),
     });
-    const text = await res.text();
-    if (!text) {
-      // GitHub answers an over-budget or timed-out query with an empty body.
-      if (attempt < 3) { await sleep(3000 * (attempt + 1)); continue; }
-      throw new Error(`empty GraphQL response (HTTP ${res.status})`);
-    }
-    const body = JSON.parse(text);
+    if (!res.ok) throw new Error(`GitHub GraphQL returned HTTP ${res.status}`);
     if (body.errors) {
       const retryable = body.errors.some((e) => /rate limit|timeout|secondary/i.test(e.message || ''));
       if (retryable && attempt < 3) {
@@ -164,7 +159,7 @@ async function fetchAccount(login) {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function rest(path) {
-  const res = await fetch(`https://api.github.com${path}`, {
+  const { response: res, body } = await githubJson(`https://api.github.com${path}`, {
     headers: {
       authorization: `bearer ${TOKEN}`,
       accept: 'application/vnd.github+json',
@@ -172,7 +167,7 @@ async function rest(path) {
     },
   });
   if (!res.ok) return { ok: false, status: res.status, headers: res.headers, body: null };
-  return { ok: true, status: res.status, headers: res.headers, body: await res.json() };
+  return { ok: true, status: res.status, headers: res.headers, body };
 }
 
 // Contributor count without downloading every contributor: ask for 1 per page,

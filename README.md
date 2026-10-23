@@ -4,7 +4,7 @@ Live dashboard over every **public** repository on the ZAO GitHub accounts.
 
 **Page:** https://bettercallzaal.github.io/zao-repos
 
-Rebuilt hourly by GitHub Actions. Five views:
+Scheduled hourly by GitHub Actions; GitHub may delay scheduled runs. The dashboard shows the snapshot timestamp and flags snapshots older than six hours. Six views:
 
 | Tab | Answers |
 |---|---|
@@ -49,12 +49,30 @@ only), plus a per-month rollup of repos pushed and created.
 
 ## Local run
 
+Serve the existing snapshot with `npm run serve`, then open http://localhost:8199. This does not require a GitHub token or refresh the data.
+
+To refresh first in PowerShell:
+
+```powershell
+$env:GITHUB_TOKEN = gh auth token
+try { npm run fetch } finally { Remove-Item Env:GITHUB_TOKEN }
+npm run serve
+```
+
+Or in Bash:
+
 ```bash
 GITHUB_TOKEN=$(gh auth token) node scripts/fetch.mjs
 cd docs && python -m http.server 8080
 ```
 
 Then open http://localhost:8080
+
+## Sync reliability
+
+`scripts/github-json.mjs` retries transient GitHub server errors, invalid JSON responses, network failures and exhausted rate limits up to four times with bounded request timeouts. Missing or inaccessible REST resources still return their existing unavailable state. A failed fetch never overwrites the previous snapshot; the workflow only commits data after a successful fetch. `npm test` verifies response handling without calling GitHub. `npm run smoke` checks dashboard rendering using the saved snapshot after installing development dependencies.
+
+Use the dashboard's Sync status link to inspect a failed or delayed run, or manually run the workflow from GitHub Actions.
 
 ## Product lines
 
