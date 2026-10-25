@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T11:36:06.419Z",
+ "generatedAt": "2026-10-25T16:21:12.132Z",
  "owners": [
   {
    "login": "bettercallzaal",
@@ -24,9 +24,9 @@
   "bettercallzaal": {
    "commits": 17078,
    "prs": 7538,
-   "issues": 238,
+   "issues": 239,
    "newRepos": 43,
-   "total": 38778,
+   "total": 38814,
    "days": [
     [
      "2025-10-26",
@@ -1486,7 +1486,7 @@
     ],
     [
      "2026-10-25",
-     18
+     54
     ]
    ]
   },
@@ -2974,12 +2974,12 @@
   "totals": {
    "stars": 27,
    "forks": 28,
-   "openIssues": 112,
+   "openIssues": 113,
    "openPRs": 52,
-   "commits30": 5490,
-   "commits90": 14013,
-   "commits365": 36530,
-   "commitsAll": 69289,
+   "commits30": 5484,
+   "commits90": 13996,
+   "commits365": 36533,
+   "commitsAll": 69292,
    "sizeMB": 2526,
    "releases": 28
   },
@@ -3220,11 +3220,11 @@
    "template": false,
    "empty": false,
    "createdAt": "2026-05-31T19:02:07Z",
-   "pushedAt": "2026-10-25T11:09:19Z",
-   "updatedAt": "2026-10-25T11:09:23Z",
+   "pushedAt": "2026-10-25T15:57:44Z",
+   "updatedAt": "2026-10-25T15:57:48Z",
    "ageDays": 0,
    "staleness": "hot",
-   "sizeKB": 21375,
+   "sizeKB": 21456,
    "stars": 0,
    "forks": 2,
    "watchers": 0,
@@ -3263,13 +3263,13 @@
    "topics": [],
    "defaultBranch": "main",
    "lastCommit": {
-    "at": "2026-10-25T11:09:18Z",
+    "at": "2026-10-25T15:57:43Z",
     "message": "chore: auto-refresh POIDH leaderboard data (refresh-leaderboard.yml)"
    },
-   "commits30": 307,
-   "commits90": 1059,
-   "commits365": 1084,
-   "commitsAll": 1084,
+   "commits30": 305,
+   "commits90": 1061,
+   "commits365": 1086,
+   "commitsAll": 1086,
    "latestRelease": {
     "tag": "space-2026-10-08-kenny-poidh-lore",
     "at": "2026-10-09T16:18:47Z"
@@ -3306,13 +3306,100 @@
     "name": "Refresh POIDH Leaderboard",
     "status": "completed",
     "conclusion": "success",
-    "at": "2026-10-25T11:09:22Z",
-    "url": "https://github.com/bettercallzaal/poidhz/actions/runs/40187605126"
+    "at": "2026-10-25T15:57:48Z",
+    "url": "https://github.com/bettercallzaal/poidhz/actions/runs/40209305771"
    },
    "deploy": {
     "status": 200,
     "finalUrl": "https://poidhz.com/",
-    "checkedAt": "2026-10-25T11:37:18.763Z"
+    "checkedAt": "2026-10-25T16:22:25.642Z"
+   }
+  },
+  {
+   "name": "zao-repos",
+   "nameWithOwner": "bettercallzaal/zao-repos",
+   "account": "bettercallzaal",
+   "url": "https://github.com/bettercallzaal/zao-repos",
+   "description": "Live dashboard over every public ZAO GitHub repository - activity, deploys, hygiene, portfolio",
+   "homepage": "https://bettercallzaal.github.io/zao-repos",
+   "brand": "ZAO Core",
+   "archived": false,
+   "fork": false,
+   "template": false,
+   "empty": false,
+   "createdAt": "2026-09-12T13:58:42Z",
+   "pushedAt": "2026-10-25T11:37:31Z",
+   "updatedAt": "2026-10-25T11:37:34Z",
+   "ageDays": 0,
+   "staleness": "hot",
+   "sizeKB": 664,
+   "stars": 0,
+   "forks": 0,
+   "watchers": 0,
+   "openIssues": 0,
+   "openPRs": 0,
+   "license": "MIT",
+   "language": "JavaScript",
+   "languageColor": "#f1e05a",
+   "languages": [
+    {
+     "name": "JavaScript",
+     "color": "#f1e05a",
+     "pct": 100
+    }
+   ],
+   "topics": [],
+   "defaultBranch": "main",
+   "lastCommit": {
+    "at": "2026-10-25T11:37:29Z",
+    "message": "chore: refresh repo data 2026-10-25T11:37Z"
+   },
+   "commits30": 141,
+   "commits90": 217,
+   "commits365": 217,
+   "commitsAll": 217,
+   "latestRelease": null,
+   "releaseCount": 0,
+   "hasReadme": true,
+   "readmeBytes": 3537,
+   "hasClaudeMd": false,
+   "hasLicenseFile": true,
+   "hasGitignore": true,
+   "hasEnvExample": false,
+   "workflows": [
+    "sync.yml"
+   ],
+   "pkg": {
+    "deps": 0,
+    "devDeps": 1,
+    "framework": null
+   },
+   "hygiene": {
+    "checks": {
+     "description": true,
+     "topics": false,
+     "readme": true,
+     "license": true,
+     "homepage": true,
+     "ci": true,
+     "gitignore": true
+    },
+    "passed": 6,
+    "total": 7,
+    "score": 86
+   },
+   "contributors": 2,
+   "lastRun": {
+    "name": "Sync repo data",
+    "status": "in_progress",
+    "conclusion": null,
+    "at": "2026-10-25T16:21:05Z",
+    "url": "https://github.com/bettercallzaal/zao-repos/actions/runs/40211248828"
+   },
+   "deploy": {
+    "status": 200,
+    "finalUrl": "https://bettercallzaal.github.io/zao-repos/",
+    "checkedAt": "2026-10-25T16:22:25.385Z"
    }
   },
   {
@@ -3416,7 +3503,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalgamez.com/",
-    "checkedAt": "2026-10-25T11:37:21.287Z"
+    "checkedAt": "2026-10-25T16:22:27.702Z"
    }
   },
   {
@@ -3522,93 +3609,6 @@
    }
   },
   {
-   "name": "zao-repos",
-   "nameWithOwner": "bettercallzaal/zao-repos",
-   "account": "bettercallzaal",
-   "url": "https://github.com/bettercallzaal/zao-repos",
-   "description": "Live dashboard over every public ZAO GitHub repository - activity, deploys, hygiene, portfolio",
-   "homepage": "https://bettercallzaal.github.io/zao-repos",
-   "brand": "ZAO Core",
-   "archived": false,
-   "fork": false,
-   "template": false,
-   "empty": false,
-   "createdAt": "2026-09-12T13:58:42Z",
-   "pushedAt": "2026-10-25T06:14:47Z",
-   "updatedAt": "2026-10-25T06:14:50Z",
-   "ageDays": 0,
-   "staleness": "hot",
-   "sizeKB": 661,
-   "stars": 0,
-   "forks": 0,
-   "watchers": 0,
-   "openIssues": 0,
-   "openPRs": 0,
-   "license": "MIT",
-   "language": "JavaScript",
-   "languageColor": "#f1e05a",
-   "languages": [
-    {
-     "name": "JavaScript",
-     "color": "#f1e05a",
-     "pct": 100
-    }
-   ],
-   "topics": [],
-   "defaultBranch": "main",
-   "lastCommit": {
-    "at": "2026-10-25T06:14:46Z",
-    "message": "chore: refresh repo data 2026-10-25T06:14Z"
-   },
-   "commits30": 141,
-   "commits90": 216,
-   "commits365": 216,
-   "commitsAll": 216,
-   "latestRelease": null,
-   "releaseCount": 0,
-   "hasReadme": true,
-   "readmeBytes": 3537,
-   "hasClaudeMd": false,
-   "hasLicenseFile": true,
-   "hasGitignore": true,
-   "hasEnvExample": false,
-   "workflows": [
-    "sync.yml"
-   ],
-   "pkg": {
-    "deps": 0,
-    "devDeps": 1,
-    "framework": null
-   },
-   "hygiene": {
-    "checks": {
-     "description": true,
-     "topics": false,
-     "readme": true,
-     "license": true,
-     "homepage": true,
-     "ci": true,
-     "gitignore": true
-    },
-    "passed": 6,
-    "total": 7,
-    "score": 86
-   },
-   "contributors": 2,
-   "lastRun": {
-    "name": "Sync repo data",
-    "status": "in_progress",
-    "conclusion": null,
-    "at": "2026-10-25T11:36:04Z",
-    "url": "https://github.com/bettercallzaal/zao-repos/actions/runs/40189542624"
-   },
-   "deploy": {
-    "status": 200,
-    "finalUrl": "https://bettercallzaal.github.io/zao-repos/",
-    "checkedAt": "2026-10-25T11:37:18.404Z"
-   }
-  },
-  {
    "name": "ZAOMixZ",
    "nameWithOwner": "bettercallzaal/ZAOMixZ",
    "account": "bettercallzaal",
@@ -3708,7 +3708,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaomixz.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:18.552Z"
+    "checkedAt": "2026-10-25T16:22:25.260Z"
    }
   },
   {
@@ -3732,7 +3732,7 @@
    "stars": 1,
    "forks": 2,
    "watchers": 0,
-   "openIssues": 37,
+   "openIssues": 38,
    "openPRs": 42,
    "license": "MIT",
    "language": "TypeScript",
@@ -3786,7 +3786,7 @@
     "message": "test(zoe): pin the clock in the auto-deferred log round-trip test (#4…"
    },
    "commits30": 429,
-   "commits90": 1386,
+   "commits90": 1384,
    "commits365": 5745,
    "commitsAll": 5745,
    "latestRelease": {
@@ -3836,13 +3836,13 @@
     "name": "Clear licence hold",
     "status": "completed",
     "conclusion": "skipped",
-    "at": "2026-10-25T07:21:19Z",
-    "url": "https://github.com/bettercallzaal/ZAOOS/actions/runs/40172448630"
+    "at": "2026-10-25T14:18:05Z",
+    "url": "https://github.com/bettercallzaal/ZAOOS/actions/runs/40201573594"
    },
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaoos.com/",
-    "checkedAt": "2026-10-25T11:37:20.160Z"
+    "checkedAt": "2026-10-25T16:22:28.204Z"
    }
   },
   {
@@ -3936,7 +3936,7 @@
    "deploy": {
     "status": 404,
     "finalUrl": "https://aurdour.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.944Z"
+    "checkedAt": "2026-10-25T16:22:27.438Z"
    }
   },
   {
@@ -3998,7 +3998,7 @@
     "at": "2026-10-24T20:06:33Z",
     "message": "chore: sweep private vault paths out of code comments (#490)"
    },
-   "commits30": 160,
+   "commits30": 157,
    "commits90": 668,
    "commits365": 825,
    "commitsAll": 825,
@@ -4039,13 +4039,13 @@
     "name": "Uptime",
     "status": "completed",
     "conclusion": "success",
-    "at": "2026-10-25T09:22:43Z",
-    "url": "https://github.com/ZAODEVZ/ZAOstock/actions/runs/40180383843"
+    "at": "2026-10-25T13:49:58Z",
+    "url": "https://github.com/ZAODEVZ/ZAOstock/actions/runs/40199406911"
    },
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaostock.com/",
-    "checkedAt": "2026-10-25T11:37:21.120Z"
+    "checkedAt": "2026-10-25T16:22:27.604Z"
    }
   },
   {
@@ -4103,7 +4103,7 @@
     "message": "zaowebsite: check-cutover asserts thezao.com is not noindexed (#66)"
    },
    "commits30": 12,
-   "commits90": 35,
+   "commits90": 33,
    "commits365": 59,
    "commitsAll": 59,
    "latestRelease": null,
@@ -4142,13 +4142,13 @@
     "name": "Uptime",
     "status": "completed",
     "conclusion": "success",
-    "at": "2026-10-25T11:00:18Z",
-    "url": "https://github.com/bettercallzaal/zao-website/actions/runs/40187029910"
+    "at": "2026-10-25T15:49:10Z",
+    "url": "https://github.com/bettercallzaal/zao-website/actions/runs/40208708498"
    },
    "deploy": {
     "status": 200,
     "finalUrl": "https://zao-website.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:18.591Z"
+    "checkedAt": "2026-10-25T16:22:25.377Z"
    }
   },
   {
@@ -4285,7 +4285,7 @@
     "message": "scout: digest run 2026-10-24T16:31:45Z"
    },
    "commits30": 30,
-   "commits90": 88,
+   "commits90": 87,
    "commits365": 175,
    "commitsAll": 175,
    "latestRelease": null,
@@ -4330,7 +4330,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://za-oscout.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.175Z"
+    "checkedAt": "2026-10-25T16:22:27.559Z"
    }
   },
   {
@@ -4423,7 +4423,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://b-zbuild-2.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:18.527Z"
+    "checkedAt": "2026-10-25T16:22:25.447Z"
    }
   },
   {
@@ -4441,7 +4441,7 @@
    "createdAt": "2026-03-18T12:08:44Z",
    "pushedAt": "2026-10-23T11:38:11Z",
    "updatedAt": "2026-10-23T11:38:15Z",
-   "ageDays": 1,
+   "ageDays": 2,
    "staleness": "hot",
    "sizeKB": 6817,
    "stars": 0,
@@ -4502,7 +4502,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://bettercallzaal.com/",
-    "checkedAt": "2026-10-25T11:37:18.687Z"
+    "checkedAt": "2026-10-25T16:22:25.507Z"
    }
   },
   {
@@ -4555,7 +4555,7 @@
     "message": "zaowebsite: port four pieces of IMan's redesign onto the home page (c…"
    },
    "commits30": 4,
-   "commits90": 27,
+   "commits90": 25,
    "commits365": 51,
    "commitsAll": 51,
    "latestRelease": null,
@@ -4594,7 +4594,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zao-website.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.069Z"
+    "checkedAt": "2026-10-25T16:22:27.540Z"
    }
   },
   {
@@ -4612,7 +4612,7 @@
    "createdAt": "2026-10-22T11:57:42Z",
    "pushedAt": "2026-10-22T11:57:53Z",
    "updatedAt": "2026-10-22T11:57:43Z",
-   "ageDays": 2,
+   "ageDays": 3,
    "staleness": "hot",
    "sizeKB": 564642,
    "stars": 0,
@@ -4671,8 +4671,8 @@
     "at": "2026-10-22T11:57:01Z",
     "message": "refactor(tooling): group mobile web preview and evidence tools (#31976)"
    },
-   "commits30": 4028,
-   "commits90": 8379,
+   "commits30": 4027,
+   "commits90": 8378,
    "commits365": 15752,
    "commitsAll": 15752,
    "latestRelease": null,
@@ -4778,7 +4778,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://www.onorca.dev/",
-    "checkedAt": "2026-10-25T11:37:18.828Z"
+    "checkedAt": "2026-10-25T16:22:25.767Z"
    }
   },
   {
@@ -4871,7 +4871,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaoonparagraph.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:18.592Z"
+    "checkedAt": "2026-10-25T16:22:25.311Z"
    }
   },
   {
@@ -5303,13 +5303,13 @@
     "name": "auto-close-merged-tasks",
     "status": "completed",
     "conclusion": "success",
-    "at": "2026-10-25T08:36:58Z",
-    "url": "https://github.com/ZAODEVZ/ZAOcowork/actions/runs/40177315025"
+    "at": "2026-10-25T13:21:15Z",
+    "url": "https://github.com/ZAODEVZ/ZAOcowork/actions/runs/40197212696"
    },
    "deploy": {
     "status": 200,
     "finalUrl": "https://za-ocowork.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.256Z"
+    "checkedAt": "2026-10-25T16:22:27.726Z"
    }
   },
   {
@@ -5427,7 +5427,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://trysparkz.com/",
-    "checkedAt": "2026-10-25T11:37:18.943Z"
+    "checkedAt": "2026-10-25T16:22:25.758Z"
    }
   },
   {
@@ -5500,7 +5500,7 @@
     "message": "perf: 5-minute ISR on public artist/event pages and sitemap (Vercel H…"
    },
    "commits30": 1,
-   "commits90": 40,
+   "commits90": 28,
    "commits365": 305,
    "commitsAll": 305,
    "latestRelease": null,
@@ -5539,13 +5539,13 @@
     "name": "Firestore daily backup",
     "status": "completed",
     "conclusion": "success",
-    "at": "2026-10-24T13:09:53Z",
-    "url": "https://github.com/bettercallzaal/CoCConcertZ/actions/runs/40096942029"
+    "at": "2026-10-25T13:36:18Z",
+    "url": "https://github.com/bettercallzaal/CoCConcertZ/actions/runs/40198360674"
    },
    "deploy": {
     "status": 200,
     "finalUrl": "https://co-c-concert-z.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:18.617Z"
+    "checkedAt": "2026-10-25T16:22:25.548Z"
    }
   },
   {
@@ -5647,7 +5647,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://bczyapz.com/",
-    "checkedAt": "2026-10-25T11:37:18.793Z"
+    "checkedAt": "2026-10-25T16:22:25.736Z"
    }
   },
   {
@@ -5744,7 +5744,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaaltimelinev1.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:18.884Z"
+    "checkedAt": "2026-10-25T16:22:25.645Z"
    }
   },
   {
@@ -5762,7 +5762,7 @@
    "createdAt": "2026-10-18T13:14:57Z",
    "pushedAt": "2026-10-18T14:41:11Z",
    "updatedAt": "2026-10-23T13:29:57Z",
-   "ageDays": 6,
+   "ageDays": 7,
    "staleness": "hot",
    "sizeKB": 131,
    "stars": 1,
@@ -5854,7 +5854,7 @@
    "createdAt": "2026-06-14T21:50:36Z",
    "pushedAt": "2026-10-18T13:38:29Z",
    "updatedAt": "2026-10-18T13:38:33Z",
-   "ageDays": 6,
+   "ageDays": 7,
    "staleness": "hot",
    "sizeKB": 12319,
    "stars": 0,
@@ -5964,7 +5964,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zingfisher-webapp.vercel.app/learn",
-    "checkedAt": "2026-10-25T11:37:19.049Z"
+    "checkedAt": "2026-10-25T16:22:25.652Z"
    }
   },
   {
@@ -6139,7 +6139,7 @@
    "createdAt": "2026-10-15T13:48:51Z",
    "pushedAt": "2026-10-15T13:54:20Z",
    "updatedAt": "2026-10-15T13:48:52Z",
-   "ageDays": 9,
+   "ageDays": 10,
    "staleness": "active",
    "sizeKB": 6714,
    "stars": 0,
@@ -6200,7 +6200,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://bettercallzaal.com/",
-    "checkedAt": "2026-10-25T11:37:21.235Z"
+    "checkedAt": "2026-10-25T16:22:27.874Z"
    }
   },
   {
@@ -6218,7 +6218,7 @@
    "createdAt": "2026-10-15T13:18:24Z",
    "pushedAt": "2026-10-15T13:43:34Z",
    "updatedAt": "2026-10-15T13:18:24Z",
-   "ageDays": 9,
+   "ageDays": 10,
    "staleness": "active",
    "sizeKB": 1433,
    "stars": 0,
@@ -6296,7 +6296,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://bczyapz.com/",
-    "checkedAt": "2026-10-25T11:37:21.288Z"
+    "checkedAt": "2026-10-25T16:22:27.934Z"
    }
   },
   {
@@ -6314,7 +6314,7 @@
    "createdAt": "2026-10-15T13:18:29Z",
    "pushedAt": "2026-10-15T13:31:03Z",
    "updatedAt": "2026-10-15T13:18:29Z",
-   "ageDays": 9,
+   "ageDays": 10,
    "staleness": "active",
    "sizeKB": 45,
    "stars": 0,
@@ -6453,7 +6453,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://poidhz.com/",
-    "checkedAt": "2026-10-25T11:37:21.410Z"
+    "checkedAt": "2026-10-25T16:22:28.015Z"
    }
   },
   {
@@ -6619,7 +6619,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://thezao-com-iman-ui.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.432Z"
+    "checkedAt": "2026-10-25T16:22:27.735Z"
    }
   },
   {
@@ -6727,7 +6727,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://za-oartizen.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.593Z"
+    "checkedAt": "2026-10-25T16:22:27.919Z"
    }
   },
   {
@@ -6929,7 +6929,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalartsubmission.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.021Z"
+    "checkedAt": "2026-10-25T16:22:25.689Z"
    }
   },
   {
@@ -7026,7 +7026,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://sideby-sidev2.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:18.969Z"
+    "checkedAt": "2026-10-25T16:22:25.827Z"
    }
   },
   {
@@ -7225,7 +7225,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://bettercallzaal-coding-hub.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.003Z"
+    "checkedAt": "2026-10-25T16:22:25.805Z"
    }
   },
   {
@@ -7243,7 +7243,7 @@
    "createdAt": "2026-05-28T09:45:18Z",
    "pushedAt": "2026-10-08T12:45:52Z",
    "updatedAt": "2026-10-08T12:45:57Z",
-   "ageDays": 16,
+   "ageDays": 17,
    "staleness": "active",
    "sizeKB": 75,
    "stars": 0,
@@ -7325,7 +7325,7 @@
    "createdAt": "2026-02-26T20:24:08Z",
    "pushedAt": "2026-10-08T12:45:05Z",
    "updatedAt": "2026-10-08T12:45:10Z",
-   "ageDays": 16,
+   "ageDays": 17,
    "staleness": "active",
    "sizeKB": 362,
    "stars": 0,
@@ -7492,7 +7492,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://the-zaodev-zapp-new.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.460Z"
+    "checkedAt": "2026-10-25T16:22:27.941Z"
    }
   },
   {
@@ -7579,7 +7579,7 @@
    "createdAt": "2026-07-17T19:11:54Z",
    "pushedAt": "2026-09-27T15:07:41Z",
    "updatedAt": "2026-09-27T15:07:45Z",
-   "ageDays": 27,
+   "ageDays": 28,
    "staleness": "active",
    "sizeKB": 424,
    "stars": 0,
@@ -7658,7 +7658,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zoostr.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.105Z"
+    "checkedAt": "2026-10-25T16:22:25.928Z"
    }
   },
   {
@@ -7676,7 +7676,7 @@
    "createdAt": "2026-02-13T02:30:50Z",
    "pushedAt": "2026-09-27T15:02:59Z",
    "updatedAt": "2026-09-27T15:03:03Z",
-   "ageDays": 27,
+   "ageDays": 28,
    "staleness": "active",
    "sizeKB": 686,
    "stars": 0,
@@ -7749,7 +7749,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://nexus.thezao.com/",
-    "checkedAt": "2026-10-25T11:37:19.470Z"
+    "checkedAt": "2026-10-25T16:22:26.116Z"
    }
   },
   {
@@ -7923,13 +7923,13 @@
     "name": "fire scheduled casts",
     "status": "completed",
     "conclusion": "success",
-    "at": "2026-10-25T11:13:22Z",
-    "url": "https://github.com/bettercallzaal/zaal-client/actions/runs/40187941354"
+    "at": "2026-10-25T14:56:36Z",
+    "url": "https://github.com/bettercallzaal/zaal-client/actions/runs/40204577767"
    },
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaalcaster.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.153Z"
+    "checkedAt": "2026-10-25T16:22:25.824Z"
    }
   },
   {
@@ -8029,7 +8029,7 @@
    "createdAt": "2026-08-01T21:08:52Z",
    "pushedAt": "2026-09-18T13:32:33Z",
    "updatedAt": "2026-09-18T13:32:37Z",
-   "ageDays": 36,
+   "ageDays": 37,
    "staleness": "warm",
    "sizeKB": 15,
    "stars": 0,
@@ -8085,7 +8085,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://gnome-pear-club.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.087Z"
+    "checkedAt": "2026-10-25T16:22:25.819Z"
    }
   },
   {
@@ -8365,7 +8365,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://ecc.tools/",
-    "checkedAt": "2026-10-25T11:37:19.102Z"
+    "checkedAt": "2026-10-25T16:22:26.087Z"
    }
   },
   {
@@ -8621,7 +8621,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://munderdiffl.in/",
-    "checkedAt": "2026-10-25T11:37:19.144Z"
+    "checkedAt": "2026-10-25T16:22:25.844Z"
    }
   },
   {
@@ -8855,7 +8855,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zlank.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.436Z"
+    "checkedAt": "2026-10-25T16:22:26.074Z"
    }
   },
   {
@@ -9080,7 +9080,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaoprojects.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.959Z"
+    "checkedAt": "2026-10-25T16:22:26.750Z"
    }
   },
   {
@@ -9444,7 +9444,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalsocials.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.429Z"
+    "checkedAt": "2026-10-25T16:22:25.986Z"
    }
   },
   {
@@ -9522,7 +9522,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalsnap1.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.697Z"
+    "checkedAt": "2026-10-25T16:22:26.392Z"
    }
   },
   {
@@ -9614,7 +9614,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalnewsletter.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.410Z"
+    "checkedAt": "2026-10-25T16:22:26.111Z"
    }
   },
   {
@@ -9761,7 +9761,7 @@
    "deploy": {
     "status": 404,
     "finalUrl": "https://zaaltimelinev1-1.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.260Z"
+    "checkedAt": "2026-10-25T16:22:26.058Z"
    }
   },
   {
@@ -9907,7 +9907,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://wavewarzapp.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.510Z"
+    "checkedAt": "2026-10-25T16:22:26.059Z"
    }
   },
   {
@@ -9981,7 +9981,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://wavewarz-overlay.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.471Z"
+    "checkedAt": "2026-10-25T16:22:26.102Z"
    }
   },
   {
@@ -10153,7 +10153,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://textsplitter-olive.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.536Z"
+    "checkedAt": "2026-10-25T16:22:26.201Z"
    }
   },
   {
@@ -10367,7 +10367,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://nouns-snap.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.842Z"
+    "checkedAt": "2026-10-25T16:22:27.526Z"
    }
   },
   {
@@ -10508,7 +10508,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://ltaesnap.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.874Z"
+    "checkedAt": "2026-10-25T16:22:27.374Z"
    }
   },
   {
@@ -10601,7 +10601,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://fishbowlz.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.716Z"
+    "checkedAt": "2026-10-25T16:22:26.300Z"
    }
   },
   {
@@ -10689,7 +10689,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://ethboulderjournal.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:24.986Z"
+    "checkedAt": "2026-10-25T16:22:27.196Z"
    }
   },
   {
@@ -10767,7 +10767,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://duodo-snap.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.709Z"
+    "checkedAt": "2026-10-25T16:22:26.423Z"
    }
   },
   {
@@ -10855,7 +10855,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://bettercallzaal-strategies.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.739Z"
+    "checkedAt": "2026-10-25T16:22:26.463Z"
    }
   },
   {
@@ -11110,7 +11110,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zao-leaderboard.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.774Z"
+    "checkedAt": "2026-10-25T16:22:26.423Z"
    }
   },
   {
@@ -11208,7 +11208,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://resumev-1.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.963Z"
+    "checkedAt": "2026-10-25T16:22:26.506Z"
    }
   },
   {
@@ -11392,7 +11392,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zuke.thezao.com/",
-    "checkedAt": "2026-10-25T11:37:22.000Z"
+    "checkedAt": "2026-10-25T16:22:28.280Z"
    }
   },
   {
@@ -11647,7 +11647,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zabalnewsletterbuilder.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.866Z"
+    "checkedAt": "2026-10-25T16:22:26.631Z"
    }
   },
   {
@@ -11665,7 +11665,7 @@
    "createdAt": "2026-03-18T12:16:33Z",
    "pushedAt": "2026-07-23T11:38:19Z",
    "updatedAt": "2026-07-23T11:38:23Z",
-   "ageDays": 93,
+   "ageDays": 94,
    "staleness": "cooling",
    "sizeKB": 810,
    "stars": 0,
@@ -11760,7 +11760,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zao-video-editor.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.985Z"
+    "checkedAt": "2026-10-25T16:22:26.595Z"
    }
   },
   {
@@ -11927,7 +11927,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://the-zao-zone.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.651Z"
+    "checkedAt": "2026-10-25T16:22:28.043Z"
    }
   },
   {
@@ -11945,7 +11945,7 @@
    "createdAt": "2026-07-07T16:02:40Z",
    "pushedAt": "2026-07-10T12:07:34Z",
    "updatedAt": "2026-07-10T12:08:31Z",
-   "ageDays": 106,
+   "ageDays": 107,
    "staleness": "cooling",
    "sizeKB": 443,
    "stars": 0,
@@ -12028,7 +12028,7 @@
    "createdAt": "2026-06-17T20:03:57Z",
    "pushedAt": "2026-07-09T15:16:47Z",
    "updatedAt": "2026-07-09T15:19:29Z",
-   "ageDays": 107,
+   "ageDays": 108,
    "staleness": "cooling",
    "sizeKB": 206,
    "stars": 0,
@@ -12098,7 +12098,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://101.thezao.com/",
-    "checkedAt": "2026-10-25T11:37:21.473Z"
+    "checkedAt": "2026-10-25T16:22:28.149Z"
    }
   },
   {
@@ -12379,7 +12379,7 @@
    "createdAt": "2026-07-04T13:56:21Z",
    "pushedAt": "2026-07-04T13:56:23Z",
    "updatedAt": "2026-07-04T13:56:27Z",
-   "ageDays": 112,
+   "ageDays": 113,
    "staleness": "cooling",
    "sizeKB": 4,
    "stars": 0,
@@ -12525,7 +12525,7 @@
    "createdAt": "2026-07-03T11:56:37Z",
    "pushedAt": "2026-07-03T13:39:25Z",
    "updatedAt": "2026-07-03T13:39:29Z",
-   "ageDays": 113,
+   "ageDays": 114,
    "staleness": "cooling",
    "sizeKB": 137,
    "stars": 0,
@@ -12600,7 +12600,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaonexus-iman-ui.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.652Z"
+    "checkedAt": "2026-10-25T16:22:28.016Z"
    }
   },
   {
@@ -12618,7 +12618,7 @@
    "createdAt": "2026-07-02T14:52:48Z",
    "pushedAt": "2026-07-02T15:13:24Z",
    "updatedAt": "2026-07-02T15:15:52Z",
-   "ageDays": 114,
+   "ageDays": 115,
    "staleness": "cooling",
    "sizeKB": 11,
    "stars": 0,
@@ -12674,7 +12674,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://compliance-zm.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.552Z"
+    "checkedAt": "2026-10-25T16:22:28.077Z"
    }
   },
   {
@@ -12692,7 +12692,7 @@
    "createdAt": "2026-07-02T12:40:43Z",
    "pushedAt": "2026-07-02T14:37:41Z",
    "updatedAt": "2026-07-02T14:40:14Z",
-   "ageDays": 114,
+   "ageDays": 115,
    "staleness": "cooling",
    "sizeKB": 1226,
    "stars": 0,
@@ -12748,7 +12748,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://wavewarzafrica-invites.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.768Z"
+    "checkedAt": "2026-10-25T16:22:28.157Z"
    }
   },
   {
@@ -12839,7 +12839,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://101.thezao.com/",
-    "checkedAt": "2026-10-25T11:37:20.121Z"
+    "checkedAt": "2026-10-25T16:22:27.039Z"
    }
   },
   {
@@ -12932,7 +12932,7 @@
    "deploy": {
     "status": 404,
     "finalUrl": "https://zao-stock.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:19.883Z"
+    "checkedAt": "2026-10-25T16:22:26.584Z"
    }
   },
   {
@@ -13020,7 +13020,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zaostock.com/",
-    "checkedAt": "2026-10-25T11:37:20.477Z"
+    "checkedAt": "2026-10-25T16:22:26.838Z"
    }
   },
   {
@@ -13167,7 +13167,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://riverside-group-demo.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.114Z"
+    "checkedAt": "2026-10-25T16:22:26.829Z"
    }
   },
   {
@@ -13185,7 +13185,7 @@
    "createdAt": "2026-05-06T10:18:27Z",
    "pushedAt": "2026-05-14T12:22:28Z",
    "updatedAt": "2026-05-14T12:22:32Z",
-   "ageDays": 163,
+   "ageDays": 164,
    "staleness": "cooling",
    "sizeKB": 210,
    "stars": 0,
@@ -13260,7 +13260,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://imanprojects.vercel.app/login?from=%2F",
-    "checkedAt": "2026-10-25T11:37:21.980Z"
+    "checkedAt": "2026-10-25T16:22:28.460Z"
    }
   },
   {
@@ -13278,7 +13278,7 @@
    "createdAt": "2026-03-08T21:46:14Z",
    "pushedAt": "2026-05-03T12:44:39Z",
    "updatedAt": "2026-05-03T12:44:42Z",
-   "ageDays": 174,
+   "ageDays": 175,
    "staleness": "cooling",
    "sizeKB": 4748,
    "stars": 0,
@@ -13348,7 +13348,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://farmdrop.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.293Z"
+    "checkedAt": "2026-10-25T16:22:26.786Z"
    }
   },
   {
@@ -13436,7 +13436,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://birthday.zaostock.com/",
-    "checkedAt": "2026-10-25T11:37:20.651Z"
+    "checkedAt": "2026-10-25T16:22:27.225Z"
    }
   },
   {
@@ -13529,7 +13529,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://recoup-api.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.476Z"
+    "checkedAt": "2026-10-25T16:22:27.133Z"
    }
   },
   {
@@ -13620,7 +13620,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://app.recoupable.dev/",
-    "checkedAt": "2026-10-25T11:37:22.044Z"
+    "checkedAt": "2026-10-25T16:22:27.320Z"
    }
   },
   {
@@ -13715,7 +13715,7 @@
    "createdAt": "2026-04-10T13:53:43Z",
    "pushedAt": "2026-04-13T14:48:24Z",
    "updatedAt": "2026-04-13T14:48:29Z",
-   "ageDays": 194,
+   "ageDays": 195,
    "staleness": "cooling",
    "sizeKB": 20812,
    "stars": 0,
@@ -13771,7 +13771,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://crownvics.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.537Z"
+    "checkedAt": "2026-10-25T16:22:26.963Z"
    }
   },
   {
@@ -13881,7 +13881,7 @@
    "createdAt": "2026-03-24T13:31:36Z",
    "pushedAt": "2026-03-25T15:47:13Z",
    "updatedAt": "2026-03-24T13:31:36Z",
-   "ageDays": 213,
+   "ageDays": 214,
    "staleness": "cooling",
    "sizeKB": 165472,
    "stars": 0,
@@ -13956,7 +13956,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://songjam-site-delta.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:21.296Z"
+    "checkedAt": "2026-10-25T16:22:27.811Z"
    }
   },
   {
@@ -14063,7 +14063,7 @@
    "createdAt": "2026-02-13T19:59:37Z",
    "pushedAt": "2026-03-03T14:01:07Z",
    "updatedAt": "2026-07-22T02:19:25Z",
-   "ageDays": 235,
+   "ageDays": 236,
    "staleness": "cooling",
    "sizeKB": 349,
    "stars": 0,
@@ -14220,7 +14220,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://zski.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.892Z"
+    "checkedAt": "2026-10-25T16:22:27.251Z"
    }
   },
   {
@@ -14307,7 +14307,7 @@
    "createdAt": "2025-11-29T11:29:59Z",
    "pushedAt": "2025-11-29T12:19:53Z",
    "updatedAt": "2026-07-22T02:19:24Z",
-   "ageDays": 329,
+   "ageDays": 330,
    "staleness": "cooling",
    "sizeKB": 18160,
    "stars": 0,
@@ -14461,7 +14461,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://cedartide.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.840Z"
+    "checkedAt": "2026-10-25T16:22:27.317Z"
    }
   },
   {
@@ -14550,7 +14550,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://fractalbotnov2025.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.766Z"
+    "checkedAt": "2026-10-25T16:22:27.310Z"
    }
   },
   {
@@ -14637,7 +14637,7 @@
    "createdAt": "2025-10-01T14:16:03Z",
    "pushedAt": "2025-10-01T14:18:53Z",
    "updatedAt": "2026-07-22T02:20:27Z",
-   "ageDays": 388,
+   "ageDays": 389,
    "staleness": "dormant",
    "sizeKB": 299,
    "stars": 0,
@@ -14706,7 +14706,7 @@
    "createdAt": "2025-09-09T07:28:54Z",
    "pushedAt": "2025-09-10T14:33:51Z",
    "updatedAt": "2026-07-22T02:20:25Z",
-   "ageDays": 409,
+   "ageDays": 410,
    "staleness": "dormant",
    "sizeKB": 751,
    "stars": 0,
@@ -14789,7 +14789,7 @@
    "createdAt": "2025-08-22T13:25:39Z",
    "pushedAt": "2025-08-26T14:34:52Z",
    "updatedAt": "2025-08-26T14:34:55Z",
-   "ageDays": 424,
+   "ageDays": 425,
    "staleness": "dormant",
    "sizeKB": 3,
    "stars": 0,
@@ -14937,7 +14937,7 @@
    "deploy": {
     "status": 404,
     "finalUrl": "https://zaiv-2.vercel.app/",
-    "checkedAt": "2026-10-25T11:37:20.753Z"
+    "checkedAt": "2026-10-25T16:22:27.335Z"
    }
   },
   {
@@ -15322,7 +15322,7 @@
    "createdAt": "2025-03-12T10:29:59Z",
    "pushedAt": "2025-03-12T15:35:44Z",
    "updatedAt": "2026-07-22T02:20:26Z",
-   "ageDays": 591,
+   "ageDays": 592,
    "staleness": "dormant",
    "sizeKB": 155510,
    "stars": 0,
@@ -15561,7 +15561,7 @@
    "deploy": {
     "status": 200,
     "finalUrl": "https://eliza.app/eliza/",
-    "checkedAt": "2026-10-25T11:37:21.169Z"
+    "checkedAt": "2026-10-25T16:22:27.830Z"
    }
   },
   {
