@@ -77,6 +77,6 @@ Use the dashboard's Sync status link to inspect a failed or delayed run, or manu
 ## Product lines
 
 `scripts/fetch.mjs` maps repo names to product lines (WaveWarZ, ZAO OS, ZAO Stock,
-COC Concertz, FISHBOWLZ, ZABAL, ZOL, Fractal, Cowork, SongJam / Music,
+COC Concertz, FISHBOWLZ, ZABAL, ZOL, Fractal, Cowork, Music,
 BetterCallZaal, Agents & Bots, Dev Infra, ZAO Core, Other) via the `BRANDS` table.
 First match wins, so order matters. Add patterns there as new lines appear.
