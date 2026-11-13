@@ -44,7 +44,7 @@ const BRANDS = [
   ['ZAI', /^zai/i],
   ['Fractal', /fractal/i],
   ['Cowork', /cowork/i],
-  ['SongJam / Music', /songjam|zounz|music|juke|concert|openmic|zoostr|nostr/i],
+  ['Music', /songjam|zounz|music|juke|concert|openmic|zoostr|nostr/i],
   ['BetterCallZaal', /bettercallzaal|^bcz/i],
   ['Client Work', /riverside|16statestreet|crownvics|firsttimehomebuyer|farmdrop|imanprojects|compliance-zm|cedartide|ethboulder|gnome-pear|duodo|ltae|walker/i],
   ['Personal', /zaaltimeline|zaalcaster|birthday|^resume|^zski/i],
